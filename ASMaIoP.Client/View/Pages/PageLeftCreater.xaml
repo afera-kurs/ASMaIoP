@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="ASMaIoP.Client.View.Pages.PageLeftCreater"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ASMaIoP.Client.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4.2*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="22">
+                   Редактирование:
+        </TextBlock>
+        <TextBlock FontSize ="14"
+                   Grid.Row="1"
+                   VerticalAlignment="Center">
+                   Выбор раздела:
+        </TextBlock>
+        <Button Grid.Row="2"
+                Style="{DynamicResource RoundCorner}"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Margin="10 5 0 0"
+                Content="Работник"
+                FontSize="8"
+                Width="80"
+                Height="40" Click="Button_Click">
+        </Button>
+        <Button Grid.Row="2"
+                Style="{DynamicResource RoundCorner}"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Margin="10 0 0 5"
+                Content="Должность"
+                FontSize="8"
+                Width="80"
+                Height="40" Click="Button_Click_1">
+        </Button>
+        <TextBlock Grid.Row="3" Padding="10">
+                    Это меню преднозначенно:<LineBreak/> для администриование <LineBreak/>персонала и должностей.
+        </TextBlock>
+    </Grid>
+</UserControl>

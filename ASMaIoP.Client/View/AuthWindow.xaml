@@ -1,0 +1,96 @@
+﻿<Window x:Class="ASMaIoP.Client.View.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ASMaIoP.Client.View"
+        Background="#01000000"
+        AllowsTransparency="True"
+        WindowState="Maximized"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Window.Loaded="Window_Loaded"
+        FontSize="20"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Height="1040" Width="1440">
+    <Border>
+        <Grid 
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center" 
+        Height="400" 
+        Width="400">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="101*"/>
+                <ColumnDefinition Width="99*"/>
+            </Grid.ColumnDefinitions>
+            <Border 
+            CornerRadius="20"
+            Background="#0bd2c4"
+            Opacity=".5" Grid.ColumnSpan="2"/>
+            <!--Profile photo-->
+            <Ellipse 
+            Stroke="White" 
+            StrokeThickness="1" 
+            Height="100"
+            Width="100" 
+            VerticalAlignment="Top" 
+            Margin="-50" Grid.ColumnSpan="2">
+                <!--<Ellipse.Fill>
+                    <ImageBrush 
+                    ImageSource="SUPER_COOL_BOSS.png"/>
+                </Ellipse.Fill>-->
+            </Ellipse>
+            <StackPanel 
+            Width="300"
+            Orientation="Vertical"
+            Margin="50,86,0,44" 
+            HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                <TextBlock
+                Text="Логин:" 
+                Margin="10,5,10,0"/>
+                <TextBox Style="{DynamicResource TextBoxRound}"  
+                Height="50"
+                Text="{Binding Path=Login}"                         
+                Margin="10,5,10,0"       
+                Background="Transparent" VerticalContentAlignment="Center"
+                Padding="10,0">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBlock
+                Text="Пароль:" 
+                Margin="10,5,10,0"/>
+                <PasswordBox Height="50"
+                x:Name="PswBox"             
+                Style="{DynamicResource PasswordBoxRnd}"            
+                Margin="10,5,10,0"  
+                Background="Transparent" VerticalContentAlignment="Center"
+                PasswordChanged="PasswordChangedHandler"  
+                Padding="10,0">
+                </PasswordBox>
+                <Button x:Name="LoginButton"         
+                Margin="10" 
+                Height="40"
+                Width="100"
+                Content="Login"
+                Click="LoginButton_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="Close_Program"                 
+                Margin="10" 
+                Height="40"
+                Width="100"
+                Click="CloseButton_Click"
+                 >Exit</Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

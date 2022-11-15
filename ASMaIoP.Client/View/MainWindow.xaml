@@ -1,0 +1,433 @@
+﻿<mah:MetroWindow x:Class="ASMaIoP.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"         
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"                 
+        xmlns:local="clr-namespace:ASMaIoP.Client" xmlns:system="clr-namespace:System;assembly=System.Runtime"
+        mc:Ignorable="d"
+        ContentRendered="MetroWindow_ContentRendered"         
+        Loaded="MetroWindow_Loaded"        
+        Closing="OnWindowClosing"  
+        WindowState="Maximized"
+        Background="#01000000"
+        Title="ASMaIoP" Height="850" Width="1600">
+    <Grid Background="LightGray">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="40"></ColumnDefinition>
+            <ColumnDefinition Width="1080*"></ColumnDefinition>
+            <ColumnDefinition Width="120*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="156*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="256*"/>
+            <RowDefinition Height="256*"/>
+        </Grid.RowDefinitions>
+        <!--Грид под основной интерфейс-->
+        <Grid Grid.Row="1" 
+              Grid.Column="0" 
+              Grid.RowSpan="4" 
+              Grid.ColumnSpan="4">
+            <Border Margin="170,30,30,30" 
+                    CornerRadius="40,40,40,300"
+                    Style="{DynamicResource CoreBorder}" >
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5"
+                                      Direction="270"
+                                      Color="Black"
+                                      Opacity="0.5"
+                                      BlurRadius="7"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.3*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <ContentControl x:Name="CCLeft"
+                                    Grid.RowSpan="4"
+                                    Margin="20"
+                                    >
+
+                    </ContentControl>
+                    <ContentControl x:Name="CCRight"
+                                    Grid.RowSpan="6"
+                                    Grid.Column="1"
+                                    Grid.ColumnSpan="6">
+                        
+                    </ContentControl>
+                </Grid>
+            </Border>
+        </Grid>
+        <!--Грид для верхней менюшки-->
+        <Grid Grid.Column="2">
+            <Border x:Name="TopPanel" 
+                    Style="{DynamicResource OtherBorder}" 
+                    Height="80" CornerRadius="0,0,80,80"  
+                    VerticalAlignment="Top">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5"
+                                      Direction="270"
+                                      Color="Black"
+                                      Opacity="0.5"
+                                      BlurRadius="7"/>
+                </Border.Effect>
+                <Grid ShowGridLines="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="70"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Style="{DynamicResource RoundCorner}" Click="Button_Click" Height="50" Grid.Column="1" HorizontalAlignment="Center" FontSize="18" Foreground="#093b46" Background="#cdd0c8" Content="Редактировать"></Button>
+                    <Button Style="{DynamicResource RoundCorner}" Height="50" Grid.Column="2" HorizontalAlignment="Center" FontSize="22" Foreground="#093b46" Background="#cdd0c8" Content="Bytton1"></Button>
+                    <Button Style="{DynamicResource RoundCorner}" Height="50" Grid.Column="3" HorizontalAlignment="Center" FontSize="22" Foreground="#093b46" Background="#cdd0c8" Content="Bytton1"></Button>
+                    <Button Style="{DynamicResource RoundCorner}" Height="50" Grid.Column="4" HorizontalAlignment="Center" FontSize="22" Foreground="#093b46" Background="#cdd0c8" Content="Bytton1"></Button>
+                    <Button Style="{DynamicResource RoundCorner}" Height="50" Grid.Column="5" HorizontalAlignment="Center" FontSize="22" Foreground="#093b46" Background="#cdd0c8" Content="Bytton1"></Button>
+                    <Button Style="{DynamicResource RoundCorner}" Height="50" Grid.Column="6" HorizontalAlignment="Center" FontSize="22" Foreground="#093b46" Background="#cdd0c8" Content="Bytton1"></Button>
+                    <Button Style="{DynamicResource RoundCorner}" Height="50" Grid.Column="7" HorizontalAlignment="Center" FontSize="22" Foreground="#093b46" Background="#cdd0c8" Content="Bytton1"></Button>
+                    <Button Style="{DynamicResource RoundCorner}" Height="50" Grid.Column="8" HorizontalAlignment="Center" FontSize="22" Foreground="#093b46" Background="#cdd0c8" Content="Bytton1"></Button>
+                </Grid>
+            </Border>
+        </Grid>
+        <!--Грид под всплывющие окно с выбором меню-->
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+
+            </Grid.RowDefinitions>
+            <Grid.Resources>
+                <system:Double x:Key="SlideOffSet">156</system:Double>
+
+                <Storyboard x:Key="SlideRight">
+                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                             From="0" To="{StaticResource SlideOffSet}"
+                             Duration="0:0:0.3" />
+                </Storyboard>
+
+                <Storyboard x:Key="SlideLeft">
+                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                              From="{StaticResource SlideOffSet}" To="0" 
+                              Duration="0:0:0.3" />
+                </Storyboard>
+            </Grid.Resources>
+            <StackPanel Orientation="Horizontal" Margin="-156, 0, 0, 0">
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Style.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard Storyboard="{StaticResource SlideRight}" />
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <EventTrigger.Actions>
+                                    <BeginStoryboard Storyboard="{StaticResource SlideLeft}" />
+                                </EventTrigger.Actions>
+                            </EventTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Style>
+                <StackPanel.RenderTransform>
+                    <TranslateTransform />
+                </StackPanel.RenderTransform>
+
+                <Border x:Name="borderSwitch"
+                    Grid.Row="0" 
+                    Grid.RowSpan="2"
+                    Width="200"
+                    HorizontalAlignment="Left" 
+                    Style="{DynamicResource OtherBorder}" 
+                    CornerRadius="0,40,40,0" RenderTransformOrigin="0.5,0.5" >
+                    <Border.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Border.RenderTransform>
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="5"
+                                      Direction="270"
+                                      Color="Black"
+                                      Opacity="0.5"
+                                      BlurRadius="7"/>
+                    </Border.Effect>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10*"/>
+                            <RowDefinition Height="10*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10*"/>
+                            <ColumnDefinition Width="2.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="ButtonProfile" 
+                            Height="70"
+                            Width="150"    
+                            Style="{DynamicResource SwitchMenuButton}"
+                            HorizontalAlignment="Left"
+                            Margin="5">
+
+                            <TextBlock x:Name="textBlock" Grid.Column="0" 
+                                       FontSize="18" 
+                                       Foreground="Black" 
+                                       VerticalAlignment="Center"
+                                       Text="Профиль">
+                            </TextBlock>
+                        </Button>
+                        <Image Grid.Row="0"
+                               Grid.Column="1"
+                               Margin="2">
+                            <Image.Source>
+                                <DrawingImage>
+                                    <DrawingImage.Drawing>
+                                        <DrawingGroup ClipGeometry="M0,0 V45.532 H45.532 V0 H0 Z">
+                                            <DrawingGroup Opacity="1">
+                                                <GeometryDrawing Brush="#FF000000" Geometry="F1 M45.532,45.532z M0,0z M22.766,0.001C10.194,0.001 0,10.193 0,22.766 0,35.339 10.193,45.531 22.766,45.531 35.34,45.531 45.532,35.339 45.532,22.766 45.532,10.193 35.34,0.001 22.766,0.001z M22.766,6.808C26.926,6.808 30.297,10.18 30.297,14.338 30.297,18.497 26.926,21.868 22.766,21.868 18.608,21.868 15.237,18.497 15.237,14.338 15.237,10.18 18.608,6.808 22.766,6.808z M22.761,39.579C18.612,39.579 14.812,38.068 11.881,35.567 11.167,34.958 10.755,34.065 10.755,33.128 10.755,28.911 14.168,25.536 18.386,25.536L27.148,25.536C31.367,25.536 34.767,28.911 34.767,33.128 34.767,34.066 34.357,34.957 33.642,35.566 30.712,38.068 26.911,39.579 22.761,39.579z" />
+                                            </DrawingGroup>
+                                        </DrawingGroup>
+                                    </DrawingImage.Drawing>
+                                </DrawingImage>
+                            </Image.Source>
+                        </Image>
+
+
+                        <Button x:Name="TaskButton"
+                            Height="70"
+                            Width="150" 
+                            Grid.Row="1" 
+                            Style="{DynamicResource SwitchMenuButton}"
+                            HorizontalAlignment="Left"
+                            Margin="5">
+                            <TextBlock Grid.Column="0" 
+                                       FontSize="18"
+                                       Foreground="Black" 
+                                       VerticalAlignment="Center"
+                                       Text="Задания">
+                            </TextBlock>
+                        </Button>
+                        <Image Grid.Row="1"
+                               Grid.Column="1"
+                               Margin="2">
+                            <Image.Source>
+                                <DrawingImage>
+                                    <DrawingImage.Drawing>
+                                        <DrawingGroup ClipGeometry="M0,0 V470.767 H470.767 V0 H0 Z">
+                                            <DrawingGroup Opacity="1">
+                                                <GeometryDrawing Brush="#FF000000" Geometry="F1 M470.767,470.767z M0,0z M362.965,21.384L289.62,21.384 286.638,7.99C285.614,3.323,281.467,0,276.685,0L194.067,0C189.285,0,185.154,3.323,184.114,7.99L181.147,21.384 107.787,21.384C80.952,21.384,59.133,43.211,59.133,70.046L59.133,422.106C59.133,448.941,80.952,470.768,107.787,470.768L362.966,470.768C389.801,470.768,411.636,448.941,411.636,422.106L411.636,70.046C411.635,43.211,389.8,21.384,362.965,21.384z M379.831,422.105C379.831,431.4,372.268,438.963,362.965,438.963L107.786,438.963C98.499,438.963,90.936,431.4,90.936,422.105L90.936,70.046C90.936,60.751,98.499,53.189,107.786,53.189L174.08,53.189 172.388,60.798C171.704,63.818 172.45,66.986 174.376,69.394 176.316,71.809 179.252,73.214 182.341,73.214L288.423,73.214C291.514,73.214 294.449,71.809 296.374,69.394 298.316,66.979 299.061,63.819 298.378,60.798L296.686,53.189 362.965,53.189C372.268,53.189,379.831,60.752,379.831,70.046L379.831,422.105z" />
+                                                <GeometryDrawing Brush="#FF000000" Geometry="F1 M470.767,470.767z M0,0z M170.835,188.426L214.084,188.426 203.805,181.407C189.299,171.508 185.573,151.714 195.48,137.21 205.373,122.721 225.173,118.971 239.677,128.886L241.371,130.043 241.371,117.907C241.371,110.041,234.988,103.659,227.129,103.659L170.835,103.659C162.978,103.659,156.595,110.042,156.595,117.907L156.595,174.178C156.595,182.045,162.978,188.426,170.835,188.426z" />
+                                                <GeometryDrawing Brush="#FF000000" Geometry="F1 M470.767,470.767z M0,0z M303.256,110.313L253.406,157.507 230.702,142.017C223.481,137.055 213.572,138.934 208.603,146.179 203.649,153.43 205.513,163.323 212.781,168.277L246.061,191.004C248.779,192.868 251.9,193.776 255.022,193.776 258.982,193.776 262.91,192.302 265.955,189.42L325.122,133.406C331.504,127.373 331.767,117.302 325.742,110.927 319.686,104.552 309.637,104.28 303.256,110.313z" />
+                                                <GeometryDrawing Brush="#FF000000" Geometry="F1 M470.767,470.767z M0,0z M170.835,297.669L214.1,297.669 203.805,290.642C189.299,280.741 185.573,260.949 195.48,246.445 205.373,231.947 225.173,228.197 239.677,238.12L241.371,239.278 241.371,227.142C241.371,219.277,234.988,212.894,227.129,212.894L170.835,212.894C162.978,212.894,156.595,219.277,156.595,227.142L156.595,283.421C156.595,291.286,162.978,297.669,170.835,297.669z" />
+                                                <GeometryDrawing Brush="#FF000000" Geometry="F1 M470.767,470.767z M0,0z M303.256,219.555L253.406,266.741 230.702,251.251C223.481,246.281 213.572,248.153 208.603,255.413 203.649,262.666 205.513,272.557 212.781,277.512L246.061,300.239C248.779,302.103 251.9,303.011 255.022,303.011 258.982,303.011 262.91,301.535 265.955,298.655L325.122,242.648C331.504,236.615 331.767,226.552 325.742,220.169 319.686,213.793 309.637,213.529 303.256,219.555z" />
+                                                <GeometryDrawing Brush="#FF000000" Geometry="F1 M470.767,470.767z M0,0z M227.129,322.135L170.835,322.135C162.978,322.135,156.595,328.518,156.595,336.383L156.595,392.654C156.595,400.519,162.978,406.902,170.835,406.902L227.129,406.902C234.988,406.902,241.371,400.519,241.371,392.654L241.371,336.383C241.371,328.518,234.988,322.135,227.129,322.135z" />
+                                            </DrawingGroup>
+                                        </DrawingGroup>
+                                    </DrawingImage.Drawing>
+                                </DrawingImage>
+                            </Image.Source>
+                        </Image>
+                    </Grid>
+                </Border>
+
+            </StackPanel>
+        </Grid>
+        <!--Грид для картинки и информации о пользвателе-->
+        <Grid Grid.Row="0" 
+          Grid.RowSpan="3">
+            <Grid.Resources>
+
+                <system:Double x:Key="SlideOffSet">155</system:Double>
+
+                <Storyboard x:Key="SlideRight">
+                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                             From="0" To="{StaticResource SlideOffSet}"
+                             Duration="0:0:0.3" />
+                </Storyboard>
+
+                <Storyboard x:Key="SlideLeft">
+                    <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.X)"
+                              From="{StaticResource SlideOffSet}" To="0" 
+                              Duration="0:0:0.3" />
+                </Storyboard>
+
+            </Grid.Resources>
+            <Border Width="200"
+                    Height="250"
+				    CornerRadius="0,0,80,0"
+                    Margin="-310 0 0 0"
+                    VerticalAlignment="Top">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="5"
+                                      Direction="270"
+                                      Color="Black"
+                                      Opacity="0.5"
+                                      BlurRadius="7"/>
+                </Border.Effect>
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=SlideState}" Value="True">
+                                <DataTrigger.EnterActions>
+                                    <BeginStoryboard Storyboard="{StaticResource SlideRight}" />
+                                </DataTrigger.EnterActions>
+                                <DataTrigger.ExitActions>
+                                    <BeginStoryboard Storyboard="{StaticResource SlideLeft}" />
+                                </DataTrigger.ExitActions>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0"
+						  EndPoint="1,0" >
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="0" Color="#0F2027"/>
+                            <GradientStop Offset="0.35" Color="#203A43"/>
+                            <GradientStop Offset="0.65" Color="#203A43"/>
+                            <GradientStop Offset="1" Color="#2C5364"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.RenderTransform>
+                    <TranslateTransform/>
+                </Border.RenderTransform>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                    </Grid.RowDefinitions>
+                    <ToggleButton Height="40"
+                                  Width="40"
+                                  Margin="5 0"
+                                  Background="Transparent"
+                                  x:Name="SlideState"
+                                  HorizontalAlignment="Right"
+                                  VerticalAlignment="Top"
+                                  BorderThickness="0"
+                                  Style="{DynamicResource ImageButtonTog}">
+                        <Image>
+                            <Image.Source>
+                                <DrawingImage>
+                                    <DrawingImage.Drawing>
+                                        <DrawingGroup ClipGeometry="M0,0 V72 H72 V0 H0 Z">
+                                            <DrawingGroup Opacity="1">
+                                                <GeometryDrawing>
+                                                    <GeometryDrawing.Pen>
+                                                        <Pen Brush="#FF000000" Thickness="4" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" MiterLimit="10" />
+                                                    </GeometryDrawing.Pen>
+                                                    <GeometryDrawing.Geometry>
+                                                        <LineGeometry StartPoint="16,26" EndPoint="56,26" />
+                                                    </GeometryDrawing.Geometry>
+                                                </GeometryDrawing>
+                                                <GeometryDrawing>
+                                                    <GeometryDrawing.Pen>
+                                                        <Pen Brush="#FF000000" Thickness="4" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" MiterLimit="10" />
+                                                    </GeometryDrawing.Pen>
+                                                    <GeometryDrawing.Geometry>
+                                                        <LineGeometry StartPoint="16,36" EndPoint="56,36" />
+                                                    </GeometryDrawing.Geometry>
+                                                </GeometryDrawing>
+                                                <GeometryDrawing>
+                                                    <GeometryDrawing.Pen>
+                                                        <Pen Brush="#FF000000" Thickness="4" StartLineCap="Round" EndLineCap="Round" LineJoin="Round" MiterLimit="10" />
+                                                    </GeometryDrawing.Pen>
+                                                    <GeometryDrawing.Geometry>
+                                                        <LineGeometry StartPoint="16,46" EndPoint="56,46" />
+                                                    </GeometryDrawing.Geometry>
+                                                </GeometryDrawing>
+                                            </DrawingGroup>
+                                        </DrawingGroup>
+                                    </DrawingImage.Drawing>
+                                </DrawingImage>
+                            </Image.Source>
+                        </Image>
+                    </ToggleButton>
+                    <Ellipse x:Name="PhotoUsers"
+                             Width="150"
+                             Height="150"
+                             HorizontalAlignment="Left"
+                             Margin="5 0 0 0">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{Binding CurrentUserPhoto}"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock x:Name="NameBlock"
+                               Margin="5"
+                               Grid.Row="1" 
+                               Foreground="Black" 
+                               FontSize="18" 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center" 
+                               Text="{Binding Name}"/>
+                    <TextBlock x:Name="SurnameBlock" 
+                               Margin="5"
+                               Grid.Row="2" 
+                               Foreground="Black" 
+                               FontSize="18" 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center" 
+                               Text="{Binding Surname}"/>
+                </Grid>
+            </Border>
+        </Grid>
+        <Button Height="40"
+                Width="40"
+                Margin="10"   
+                x:Name="LogOut"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Grid.Column="3"
+                Click="LogOut_Click"
+                BorderThickness="0"
+                Style="{DynamicResource ImageButton}">
+            <Image>
+                <Image.Source>
+                    <DrawingImage>
+                        <DrawingImage.Drawing>
+                            <DrawingGroup ClipGeometry="M0,0 V489.9 H489.9 V0 H0 Z">
+                                <DrawingGroup.Transform>
+                                    <TranslateTransform X="0" Y="3.5527136788005009E-15" />
+                                </DrawingGroup.Transform>
+                                <DrawingGroup Opacity="1">
+                                    <DrawingGroup Opacity="1">
+                                        <DrawingGroup Opacity="1">
+                                            <GeometryDrawing Brush="#FF000000" Geometry="F1 M489.9,489.9z M0,0z M468.3,255.8C468.4,255.7 468.4,255.7 468.5,255.6 468.8,255.2 469.1,254.9 469.3,254.5 469.4,254.4 469.4,254.3 469.5,254.2 469.7,253.8 470,253.4 470.2,253 470.2,252.9 470.3,252.8 470.3,252.8 470.5,252.4 470.7,252 470.9,251.5 470.9,251.4 470.9,251.4 471,251.3 471.2,250.9 471.3,250.4 471.5,249.9 471.5,249.8 471.5,249.7 471.6,249.7 471.7,249.2 471.9,248.8 471.9,248.3 471.9,248.1 471.9,248 472,247.8 472.1,247.4 472.1,247 472.2,246.6 472.3,246 472.3,245.5 472.3,244.9 472.3,244.3 472.3,243.8 472.2,243.2 472.2,242.8 472.1,242.4 472,242 472,241.8 472,241.7 471.9,241.5 471.8,241 471.7,240.6 471.6,240.1 471.6,240 471.6,239.9 471.5,239.9 471.4,239.4 471.2,239 471,238.5 471,238.4 471,238.4 470.9,238.3 470.7,237.9 470.5,237.4 470.3,237 470.3,236.9 470.2,236.8 470.2,236.8 470,236.4 469.8,236 469.5,235.6 469.4,235.5 469.4,235.4 469.3,235.3 469,234.9 468.8,234.5 468.5,234.2 468.4,234.1 468.4,234.1 468.3,234 467.9,233.6 467.6,233.1 467.1,232.7L368.2,133.9C361.5,127.2 350.6,127.2 343.9,133.9 337.2,140.6 337.2,151.5 343.9,158.2L413.5,227.8 136.8,227.8C127.3,227.8 119.6,235.5 119.6,244.9 119.6,254.4 127.3,262.1 136.8,262.1L413.6,262.1 344.5,331.2C337.8,337.9 337.8,348.8 344.5,355.5 347.8,358.8 352.2,360.5 356.6,360.5 361,360.5 365.4,358.8 368.7,355.5L467,257.2C467.5,256.6,467.9,256.2,468.3,255.8z" />
+                                            <GeometryDrawing Brush="#FF000000" Geometry="F1 M489.9,489.9z M0,0z M110.7,34.3L238.7,34.3C248.2,34.3 255.9,26.6 255.9,17.2 255.9,7.7 248.2,-3.5527136788005E-15 238.7,-3.5527136788005E-15L110.7,-3.5527136788005E-15C59.4,0,17.6,41.8,17.6,93.1L17.6,396.8C17.6,448.1,59.4,489.9,110.7,489.9L236.6,489.9C246.1,489.9 253.8,482.2 253.8,472.8 253.8,463.3 246.1,455.6 236.6,455.6L110.7,455.6C78.3,455.6,51.9,429.2,51.9,396.8L51.9,93.1C52,60.6,78.3,34.3,110.7,34.3z" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingGroup>
+                            </DrawingGroup>
+                        </DrawingImage.Drawing>
+                    </DrawingImage>
+                </Image.Source>
+            </Image>
+        </Button>
+    </Grid>
+</mah:MetroWindow>

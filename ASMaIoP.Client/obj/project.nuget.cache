@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "dgSpecHash": "gO7exc4MOA4dNxijSpUT4Hz0yADltNPAVCNP/B/mXHxfWeeKipclv0ZqZykDRi8zxuMPCYliLdd4vtTE2qCNOA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\caratovchanin\\source\\repos\\ASMaIoP\\ASMaIoP.Client\\ASMaIoP.Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\cefsharp.common.netcore\\107.1.40\\cefsharp.common.netcore.107.1.40.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\cefsharp.wpf.netcore\\107.1.40\\cefsharp.wpf.netcore.107.1.40.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\chromiumembeddedframework.runtime\\107.1.4\\chromiumembeddedframework.runtime.107.1.4.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\chromiumembeddedframework.runtime.win-arm64\\107.1.4\\chromiumembeddedframework.runtime.win-arm64.107.1.4.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\chromiumembeddedframework.runtime.win-x64\\107.1.4\\chromiumembeddedframework.runtime.win-x64.107.1.4.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\chromiumembeddedframework.runtime.win-x86\\107.1.4\\chromiumembeddedframework.runtime.win-x86.107.1.4.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\mahapps.metro\\2.4.9\\mahapps.metro.2.4.9.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\materialdesigncolors\\2.0.9\\materialdesigncolors.2.0.9.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\materialdesignextensions\\3.3.0\\materialdesignextensions.3.3.0.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\materialdesignthemes\\4.6.1\\materialdesignthemes.4.6.1.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\materialdesignthemes.mahapps\\0.2.5\\materialdesignthemes.mahapps.0.2.5.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\runtime.linux-arm.runtime.native.system.io.ports\\6.0.0\\runtime.linux-arm.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\runtime.linux-arm64.runtime.native.system.io.ports\\6.0.0\\runtime.linux-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\runtime.linux-x64.runtime.native.system.io.ports\\6.0.0\\runtime.linux-x64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\runtime.native.system.io.ports\\6.0.0\\runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\6.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\6.0.0\\runtime.osx-x64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\system.io.ports\\6.0.0\\system.io.ports.6.0.0.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
+  ],
+  "logs": []
+}

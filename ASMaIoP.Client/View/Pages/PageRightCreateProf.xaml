@@ -1,0 +1,211 @@
+﻿<UserControl x:Class="ASMaIoP.Client.View.Pages.PageRightCreateProf"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ASMaIoP.Client.View.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Имя:"
+                       Grid.Row="0"
+                       Margin="28"
+                       FontSize="22"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"/>
+            <TextBlock Text="Фамилия:"
+                       Grid.Row="1"
+                       Margin="28"
+                       FontSize="22"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"/>
+        </Grid>
+        <TextBlock x:Name="CardTextBlock"
+                   Text="Карта:"
+                   
+                   Grid.Row="2"
+                   Margin="28"
+                   FontSize="22"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"/>
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                x:Name="CardsRecivedButton"
+                
+                Style="{DynamicResource RoundCorner}"
+                HorizontalAlignment="Right"
+                Margin="0 0 40 0"
+                Width="150"
+                Height="50"
+                Content="Считать карту"
+                Click="CardsRecivedButton_Click"
+                ></Button>
+        <TextBlock x:Name="CardStatys"
+                   Text="{Binding Path=CardID}"
+                   Grid.Row="2"
+                   Margin="28 5"
+                   FontSize="14"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Left"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox   Grid.Row="0"
+                       x:Name="NameBox"
+                       Text="{Binding Path=Name}"
+                       Background="Transparent"
+                       BorderBrush="Transparent"
+                       Margin="0 10 0 0"
+                       Height="50"
+                       Width="200"
+                       FontSize="22"
+                       HorizontalAlignment="Left"/>
+            <TextBox   Grid.Row="1"
+                       x:Name="SurnameBox"
+                       Text="{Binding Path=Surname}"
+                       Background="Transparent"
+                       BorderBrush="Transparent"
+                       Margin="0 10 0 0"
+                       Height="50"
+                       Width="200"
+                       FontSize="22"
+                       HorizontalAlignment="Left"/>
+            <Rectangle Margin="0 0 0 23" HorizontalAlignment="Left" VerticalAlignment="Bottom" Fill="WhiteSmoke" Width="200" Height="2"></Rectangle>
+            <Rectangle Margin="0 0 0 23" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Fill="WhiteSmoke" Width="200" Height="2"></Rectangle>
+        </Grid>
+        <Grid Grid.Row="1" 
+              Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <ComboBox  x:Name="cmbAbility"
+                       Background="Transparent"
+                       BorderBrush="Transparent"
+                       Margin="0 5 0 0"
+                       HorizontalAlignment="Left"
+                       Width="200"
+                       Height="20" 
+                       ItemsSource="{Binding}"
+                       SelectionChanged="cmbAbility_SelectionChanged">
+                       
+            </ComboBox>
+            <Rectangle Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="WhiteSmoke" Width="200" Height="2"></Rectangle>
+        </Grid>
+        <TextBlock Grid.Row="1"
+                   FontSize="22"
+                   Margin="28 12 0 0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top">Должность:</TextBlock>
+        <Grid Grid.Row="3" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" Grid.RowSpan="3">
+                <Grid Grid.Row="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="10*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0"
+                           FontSize="12"
+                           VerticalAlignment="Top"
+                           Margin="3">Дата первого <LineBreak/> рабочего дня</TextBlock>
+                    <DatePicker Grid.Row="1"
+                                x:Name="FirstWorkDay"
+                                Width="100"
+                                Height="20"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="3"></DatePicker>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="2"
+              Grid.ColumnSpan="2"
+              Grid.RowSpan="5">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0"
+                    x:Name="CreateButton"
+                    Style="{DynamicResource RoundCorner}"
+                    HorizontalAlignment="Right"
+                    Margin="0 0 40 0"
+                    Width="200"
+                    Height="50"
+                    Content="Создать"
+                    Click="CreateButton_Click"
+                    ></Button>
+            <Button Grid.Row="2"
+                    x:Name="EdithUsers"
+                    Style="{DynamicResource RoundCorner}"
+                    HorizontalAlignment="Right"
+                    Margin="0 0 40 0"
+                    Width="200"
+                    Height="50"
+                    Content="Редактировать"
+                    Click="EdithUsers_Click"
+                    ></Button>
+            <Button Grid.Row="3"
+                    x:Name="ButtonSave"
+                    Style="{DynamicResource RoundCorner}"
+                    Visibility="Collapsed"
+                    HorizontalAlignment="Right"
+                    Margin="0 0 50 0"
+                    Width="100"
+                    Height="50"
+                    Click="ButtonSave_Click"
+                    Content="Сохранить"
+                    ></Button>
+            <Button Grid.Row="6"
+                    x:Name="DeleteButton"
+                    Visibility="Collapsed"
+                    Style="{DynamicResource RoundCorner}"
+                    HorizontalAlignment="Right"
+                    Margin="0 0 40 10"
+                    Width="200"
+                    Height="50"
+                    Content="Удалить" 
+                    Click="DeleteButton_Click"
+                    ></Button>
+            <ComboBox x:Name="UserTumbler"
+                      Visibility="Collapsed"
+                      Grid.Row="1"
+                      Background="Transparent"
+                      BorderBrush="Transparent"
+                      ItemsSource="{Binding}"
+                      SelectionChanged="UserTumbler_SelectionChanged"
+                      ></ComboBox>
+        </Grid>
+    </Grid>
+</UserControl>
