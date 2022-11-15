@@ -25,8 +25,6 @@ namespace ASMaIoP.Client.View.Pages
             InitializeComponent();
         }
 
-
-
         private void Create_Click(object sender, RoutedEventArgs e)
         {
 
@@ -34,7 +32,9 @@ namespace ASMaIoP.Client.View.Pages
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-
+            Save.Visibility = Visibility.Visible;
+            ProfTumbler.Visibility = Visibility.Visible;
+            Delete.Visibility = Visibility.Visible;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -43,6 +43,11 @@ namespace ASMaIoP.Client.View.Pages
         }
 
         private void ProfTumbler_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
         {
 
         }
