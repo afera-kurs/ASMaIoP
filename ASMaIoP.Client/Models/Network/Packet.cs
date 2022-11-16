@@ -15,7 +15,11 @@ namespace ASMaIoP.Models.Network
         CREATE_PROF_USERS = 4,
         CREATE_PROF_EditUser = 5,
         CREATE_PROF_DELETE_USER = 6,
-        CREATE_PROF_USER=7
+        CREATE_PROF_USER=7,
+        ADMIN_ROLES_GET = 8,
+        ADMIN_ROLES_EDIT = 9,
+        ADMIN_ROLE_CREATE = 10,
+        ADMIN_ROLE_REMOVE = 11
     }
 
     internal class Packet

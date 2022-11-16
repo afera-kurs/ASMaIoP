@@ -358,8 +358,6 @@ namespace ASMaIoP.Client.ViewModels
             return RawPassword;
         }
 
-        
-
         public event PropertyChangedEventHandler? PropertyChanged;
 
     }

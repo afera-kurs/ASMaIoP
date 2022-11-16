@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ASMaIoP.Client.ViewModels;
+using ASMaIoP.Models.Utilities;
+using ControlzEx.Standard;
 
 namespace ASMaIoP.Client.View.Pages
 {
@@ -20,14 +24,23 @@ namespace ASMaIoP.Client.View.Pages
     /// </summary>
     public partial class PageRightCreateJob : UserControl
     {
+        EditJob jobs = null;
         public PageRightCreateJob()
         {
             InitializeComponent();
+            jobs = new EditJob();
+            jobs.FormLoaded();
         }
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
-
+            DataRowView v = (DataRowView)LvlAccess.SelectedValue;
+            int i = int.Parse((string)v.Row.ItemArray[1]);
+            bool result = int.TryParse(Salary.Text, out var salary);
+            if (result == true)
+                jobs.CreateJobs(i, NameJob.Text, salary);
+            else
+                MessageBox.Show($"Проверьте введенное значение для пункта зарплата. Оно не корректно: {Salary.Text}");
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
@@ -42,14 +55,10 @@ namespace ASMaIoP.Client.View.Pages
 
         }
 
-        private void ProfTumbler_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            DataRowView v = (DataRowView)ProfTumbler.SelectedValue;
+            int i = int.Parse((string)v.Row.ItemArray[1]);
         }
     }
 }
