@@ -22,6 +22,7 @@ using ASMaIoP.Client.Models.Network;
 using ASMaIoP.Models;
 using System.Security.Cryptography;
 using System.Xml.Linq;
+using System.Data;
 
 namespace ASMaIoP.Client.ViewModels
 {
@@ -48,7 +49,7 @@ namespace ASMaIoP.Client.ViewModels
         List<EmployeeInfo> employees = new List<EmployeeInfo>();
 
         string selectedJobTitle;
-        string selectedJobLevel;
+        string selectedJobSalary;
 
         string SelectedJobTitle
         {
@@ -60,29 +61,29 @@ namespace ASMaIoP.Client.ViewModels
             }
         }
 
-
-        string SelectedJobLevel
+        string SelectedJobSalary
         {
-            get => selectedJobTitle;
-            set 
+            get=>selectedJobSalary;
+            set
             {
-                selectedJobTitle = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedJobLevel)));
+                selectedJobSalary = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedJobSalary)));
             }
         }
 
         public List<EmployeeInfo> GetUsersDeleteJob(int nJobID)
         {
-            List<EmployeeInfo> employees = new List<EmployeeInfo>();
+            List<EmployeeInfo> emp = new List<EmployeeInfo>();
+
             foreach(EmployeeInfo inf in employees)
             {
                 if(inf.jodId == nJobID)
                 {
-                    employees.Add(inf);
+                    emp.Add(inf);
                 }
             }
 
-            return employees;
+            return emp;
         }
 
         public void LoadUsers()
@@ -127,18 +128,23 @@ namespace ASMaIoP.Client.ViewModels
         
         public void FormLoaded()
         {
-            Thread thread = new Thread(LoadUsers);
-            thread.Start();
+            LoadUsers();
+            LoadJobs();
         }
 
-        public EditJob()
-        {
+        PageRightCreateJob parent;
 
+        public EditJob(PageRightCreateJob form)
+        {
+            this.parent = form;
         }
 
         //Надо!
         public void LoadJobs()
         {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("JobTitle");
+            dt.Columns.Add("Id");
             Packet packet = new Packet();
             packet.SetPacketType(PacketType.ADMIN_ROLES_GET);
 
@@ -164,14 +170,38 @@ namespace ASMaIoP.Client.ViewModels
                 string RoleTitle = ApplicationAPIs.session.ReadString();
 
                 JobsInfo.Add(new JobInfo { JobId = nRoleID, JobLevel = nRoleLvl, Title = RoleTitle,Salary = nRoleSalary  });
+
+                DataRow dr = dt.NewRow(); 
+                dr["JobTitle"] = RoleTitle;
+                dr["Id"] = nRoleID;
+
+                dt.Rows.Add(dr);
             }
 
             ApplicationAPIs.session.Close();
+
+            parent.ProfTumbler.DataContext = dt;
+            parent.ProfTumbler.DisplayMemberPath = dt.Columns[0].ToString();
+        }
+
+        public void LoadJob(int JobID)
+        {
+            foreach(JobInfo inf in JobsInfo)
+            {
+                if(inf.JobId == JobID)
+                {
+                    parent.NameJob.Text = inf.Title;
+                    parent.Salary.Text = inf.Salary.ToString();
+                    parent.LvlAccess.SelectedIndex = inf.JobLevel-1;
+                }
+            }
         }
 
         public void edJob(int JobID, string JobTitle, int nSalary, int nRoleLvl)
         {
             Packet packet = new Packet();
+            JobTitle = JobTitle.Replace("\f", String.Empty);
+            JobTitle = JobTitle.Replace("\0", String.Empty);
             packet.SetPacketType(PacketType.ADMIN_ROLES_EDIT);
 
             //добавляем в пакет айди текущей сессии
@@ -181,6 +211,7 @@ namespace ASMaIoP.Client.ViewModels
             if (!ApplicationAPIs.session.Open())
             {
                 MessageBox.Show("лечи голову");
+                return;
             }
 
             packet.AddInt(JobID);
@@ -234,7 +265,7 @@ namespace ASMaIoP.Client.ViewModels
             else
             {
                 LoadUsers();
-                MessageBox.Show("Ошибка не удолось изменить данные пользователя!");
+                MessageBox.Show("Ошибка не удолось удалить данные пользователя!");
             }
         }
 

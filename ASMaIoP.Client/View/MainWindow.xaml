@@ -80,6 +80,7 @@
         <!--Грид для верхней менюшки-->
         <Grid Grid.Column="2">
             <Border x:Name="TopPanel" 
+                    Visibility="Collapsed"
                     Style="{DynamicResource OtherBorder}" 
                     Height="80" CornerRadius="0,0,80,80"  
                     VerticalAlignment="Top">

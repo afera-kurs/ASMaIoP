@@ -10,6 +10,9 @@
     <Compile Update="View\AuthWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Pages\MyProf.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Pages\PageLeftCreater.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,6 +25,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="View\AuthWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Pages\MyProf.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Pages\PageLeftCreater.xaml">

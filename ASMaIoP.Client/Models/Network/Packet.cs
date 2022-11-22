@@ -19,7 +19,8 @@ namespace ASMaIoP.Models.Network
         ADMIN_ROLES_GET = 8,
         ADMIN_ROLES_EDIT = 9,
         ADMIN_ROLE_CREATE = 10,
-        ADMIN_ROLE_REMOVE = 11
+        ADMIN_ROLE_REMOVE = 11,
+        DISCONNECT = 12 
     }
 
     internal class Packet
@@ -88,7 +89,7 @@ namespace ASMaIoP.Models.Network
 
         public void AddString(string value)
         {
-            byte[] bytes = Encoding.ASCII.GetBytes(value);
+            byte[] bytes = Encoding.Default.GetBytes(value);
             foreach (byte b in bytes)
             {
                 lBytes.Add(b);
@@ -97,13 +98,13 @@ namespace ASMaIoP.Models.Network
 
         public string GetString(int nStart, int nCount)
         {
-            return Encoding.ASCII.GetString(lBytes.ToArray(), nStart, nCount);
+            return Encoding.Default.GetString(lBytes.ToArray(), nStart, nCount);
         }
 
         public void EncryptSE(string key)
         {
             PacketType nTmp = (PacketType)lBytes[0];
-            byte[] KeyBytes = Encoding.ASCII.GetBytes(key);
+            byte[] KeyBytes = Encoding.Default.GetBytes(key);
             int nKeyLen = KeyBytes.Length;
             int nKeyCounter = 0;
 

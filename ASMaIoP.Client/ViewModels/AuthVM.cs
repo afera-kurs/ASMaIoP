@@ -8,6 +8,7 @@ using ASMaIoP.Client.View;
 using ASMaIoP.Models;
 using ASMaIoP.Models.Network;
 using ASMaIoP.Models.Utilities;
+using MaterialDesignThemes.Wpf;
 
 namespace ASMaIoP.Client.ViewModels
 {
@@ -42,9 +43,18 @@ namespace ASMaIoP.Client.ViewModels
                 {
                     Parent.Dispatcher.Invoke(() =>
                     {
-                        MainWindow.Instance.Show();
-                        MainWindow.Instance.ViewModel.WindowLoaded();
-                        Parent.Hide();
+                        if (ASMaIoP.Models.ApplicationAPIs.session.AccessLevel >= 3)
+                        {
+                            MainWindow inst = MainWindow.Instance;
+                            inst.Show();
+                            inst.TopPanel.Visibility = Visibility.Visible;
+                            Parent.Hide();
+                        }
+                        else
+                        {
+                            MainWindow.Instance.Show();
+                            Parent.Hide();
+                        }
                     });
                 }
                 else
@@ -63,8 +73,18 @@ namespace ASMaIoP.Client.ViewModels
             {
                 if (ASMaIoP.Models.ApplicationAPIs.session.Auth(String.Empty, pass, Login))
                 {
-                    MainWindow.Instance.Show();
-                    Parent.Hide();
+                    if (ASMaIoP.Models.ApplicationAPIs.session.AccessLevel >= 3)
+                    {
+                        MainWindow inst = MainWindow.Instance;
+                        inst.Show();
+                        inst.TopPanel.Visibility = Visibility.Visible;
+                        Parent.Hide();
+                    }
+                    else
+                    {
+                        MainWindow.Instance.Show();
+                        Parent.Hide();
+                    }
                 }
                 else
                     MessageBox.Show("Еблан лечи голову");

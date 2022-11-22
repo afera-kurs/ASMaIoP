@@ -42,16 +42,23 @@ namespace ASMaIoP.Models.Network
 
         public bool Auth(string CardId, string Password, string Login)
         {
+            //создаем пакет
             Packet packet = new Packet();
+            //Устанавливаем тип пакета
             packet.SetPacketType(PacketType.AUTH);
+            // Провереям что нам передели в метод если это карта 
             if (CardId.Length > 0)
             {
+                // указваем серверу что авторизация через карту
                 packet.AddByte(1);
+                // шифруем индентифекатор карты
                 CardId = sha256(CardId);
+                // добавлем его в пакет
                 packet.AddString(CardId);
             }
             else
             {
+                // 
                 Password = sha256(Password);
                 packet.AddByte(0);
                 byte[] LoginBytes = Encoding.ASCII.GetBytes(Login);
@@ -86,10 +93,30 @@ namespace ASMaIoP.Models.Network
             if(nStatusCode == 1)
             {
                 nSessionId = packet.GetInt(5);
+                    nLvlId = packet.GetInt(5 + 4);
                 return true;
             }
 
             return false;
+        }
+
+        public void Disconnect()
+        {
+            //создаем пакет
+            Packet packet = new Packet();
+            //Устанавливаем тип пакета
+            packet.SetPacketType(PacketType.DISCONNECT);
+
+            packet.AddInt(nSessionId);
+
+            if (!Open()) //Провереям смогли мы подключиться
+            {
+                return;
+            }
+
+            Write(packet.GetBytes());
+
+            Close();
         }
     }
 }

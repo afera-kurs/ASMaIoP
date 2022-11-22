@@ -28,23 +28,10 @@
             CornerRadius="20"
             Background="#0bd2c4"
             Opacity=".5" Grid.ColumnSpan="2"/>
-            <!--Profile photo-->
-            <Ellipse 
-            Stroke="White" 
-            StrokeThickness="1" 
-            Height="100"
-            Width="100" 
-            VerticalAlignment="Top" 
-            Margin="-50" Grid.ColumnSpan="2">
-                <!--<Ellipse.Fill>
-                    <ImageBrush 
-                    ImageSource="SUPER_COOL_BOSS.png"/>
-                </Ellipse.Fill>-->
-            </Ellipse>
             <StackPanel 
             Width="300"
             Orientation="Vertical"
-            Margin="50,86,0,44" 
+            Margin="50,86,0,24" 
             HorizontalAlignment="Left" Grid.ColumnSpan="2">
                 <TextBlock
                 Text="Логин:" 
@@ -76,7 +63,7 @@
                 Margin="10" 
                 Height="40"
                 Width="100"
-                Content="Login"
+                Content="Войти"
                 Click="LoginButton_Click">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -84,12 +71,13 @@
                         </Style>
                     </Button.Resources>
                 </Button>
-                <Button x:Name="Close_Program"                 
+                <Button x:Name="Close_Program"  
+                Background="Red"
                 Margin="10" 
                 Height="40"
-                Width="100"
+                Width="80"
                 Click="CloseButton_Click"
-                 >Exit</Button>
+                 >Закрыть</Button>
             </StackPanel>
         </Grid>
     </Border>

@@ -25,6 +25,7 @@ using System; // EventArgs
 using System.ComponentModel; // CancelEventArgs
 using System.Windows; // window
 using ASMaIoP.Models.Utilities;
+using ASMaIoP.Models;
 
 namespace ASMaIoP.Client
 {
@@ -79,7 +80,8 @@ namespace ASMaIoP.Client
         
         public void OnWindowClosing(object sender, CancelEventArgs e)
         {
-            AuthWindow.Instance.Show();
+            ApplicationAPIs.session.Disconnect();
+            System.Windows.Application.Current.Shutdown();
         }
 
     }

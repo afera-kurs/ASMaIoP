@@ -27,19 +27,12 @@ namespace ASMaIoP.Client.View.Pages
         
         public PageRightCreateProf()
         {
-            //dataTable.Columns.Add(new DataColumn("Id", typeof(int)));
-            //dataTable.Columns.Add(new DataColumn("Names", typeof(string)));
-            //dataTable.Rows.Add(2,"23");
-            //dataTable.Rows.Add(2,"23");   
-            //dataTable.Rows.Add(2,"23");
+
             prof = new CreateProf(this);
             DataContext = prof;
 
             InitializeComponent();
             prof.FormLoaded();
-
-            //dataTable.Rows.Add(2,"2sad3");
-            //cmbAbility.ItemsSource = dataTable.DefaultView;
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
