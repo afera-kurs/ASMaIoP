@@ -30,6 +30,10 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <Style TargetType="DataGridColumnHeader">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
     <Style x:Key="PasswordBoxRnd" TargetType="{x:Type PasswordBox}">
         <Setter Property="PasswordChar" Value="●"/>
         <Setter Property="Template">

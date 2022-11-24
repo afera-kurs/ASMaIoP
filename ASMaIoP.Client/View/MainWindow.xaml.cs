@@ -77,12 +77,17 @@ namespace ASMaIoP.Client
         {
             CCLeft.Content = new PageLeftCreater(this);
         }
-        
+
         public void OnWindowClosing(object sender, CancelEventArgs e)
         {
             ApplicationAPIs.session.Disconnect();
             System.Windows.Application.Current.Shutdown();
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            CCLeft.Content = new TabelLeft();
+            CCRight.Content = new TabelRight();
+        }
     }
 }

@@ -350,3 +350,7 @@ C:\Users\caratovchanin\source\repos\ASMaIoP\ASMaIoP.Client\bin\Debug\net6.0-wind
 C:\Users\caratovchanin\source\repos\ASMaIoP\ASMaIoP.Client\obj\Debug\net6.0-windows\ASMaIoP.Client_Content.g.cs
 C:\Users\caratovchanin\source\repos\ASMaIoP\ASMaIoP.Client\obj\Debug\net6.0-windows\View\Pages\MyProf.g.cs
 C:\Users\caratovchanin\source\repos\ASMaIoP\ASMaIoP.Client\obj\Debug\net6.0-windows\View\Pages\MyProf.baml
+C:\Users\caratovchanin\source\repos\ASMaIoP\ASMaIoP.Client\obj\Debug\net6.0-windows\View\Pages\TabelLeft.g.cs
+C:\Users\caratovchanin\source\repos\ASMaIoP\ASMaIoP.Client\obj\Debug\net6.0-windows\View\Pages\TabelRight.g.cs
+C:\Users\caratovchanin\source\repos\ASMaIoP\ASMaIoP.Client\obj\Debug\net6.0-windows\View\Pages\TabelLeft.baml
+C:\Users\caratovchanin\source\repos\ASMaIoP\ASMaIoP.Client\obj\Debug\net6.0-windows\View\Pages\TabelRight.baml

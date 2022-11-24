@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\caratovchanin\source\repos\ASMaIoP\ASMaIoP.Client\App.xaml
-7-1098728687
+9-864789966
 171-1944341450
-2253905428
+25-1182753978
 2061949797793
-View\AuthWindow.xaml;View\MainWindow.xaml;View\Pages\MyProf.xaml;View\Pages\PageLeftCreater.xaml;View\Pages\PageRightCreateJob.xaml;View\Pages\PageRightCreateProf.xaml;View\StylesASMaIoP.xaml;
+View\AuthWindow.xaml;View\MainWindow.xaml;View\Pages\MyProf.xaml;View\Pages\PageLeftCreater.xaml;View\Pages\PageRightCreateJob.xaml;View\Pages\PageRightCreateProf.xaml;View\Pages\TabelLeft.xaml;View\Pages\TabelRight.xaml;View\StylesASMaIoP.xaml;
 
 False
 

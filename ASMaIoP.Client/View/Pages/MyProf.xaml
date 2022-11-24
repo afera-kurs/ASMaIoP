@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="163*"/>
-            <RowDefinition Height="287*"/>
-        </Grid.RowDefinitions>
-
+        <Calendar Height="230"
+                  Width="180"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Margin="30"></Calendar>
     </Grid>
 </UserControl>

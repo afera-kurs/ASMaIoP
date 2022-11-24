@@ -13,6 +13,9 @@
     <Compile Update="View\Pages\MyProf.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Pages\MyProfileLeft.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Pages\PageLeftCreater.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -20,6 +23,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\Pages\PageRightCreateProf.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Pages\TabelLeft.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Pages\TabelRight.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -30,6 +39,9 @@
     <Page Update="View\Pages\MyProf.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\Pages\MyProfileLeft.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\Pages\PageLeftCreater.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -37,6 +49,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Pages\PageRightCreateProf.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Pages\TabelLeft.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Pages\TabelRight.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\StylesASMaIoP.xaml">

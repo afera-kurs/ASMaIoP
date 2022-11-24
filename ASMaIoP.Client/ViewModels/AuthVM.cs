@@ -43,23 +43,11 @@ namespace ASMaIoP.Client.ViewModels
                 {
                     Parent.Dispatcher.Invoke(() =>
                     {
-                        if (ASMaIoP.Models.ApplicationAPIs.session.AccessLevel >= 3)
-                        {
-                            MainWindow inst = MainWindow.Instance;
-                            inst.Show();
-                            inst.TopPanel.Visibility = Visibility.Visible;
-                            Parent.Hide();
-                        }
-                        else
-                        {
-                            MainWindow.Instance.Show();
-                            Parent.Hide();
-                        }
+                        UpdateMainWindow();
                     });
                 }
                 else
                     MessageBox.Show("Еблан лечи голову");
-
             }
             catch (Exception ex)
             {
@@ -73,18 +61,7 @@ namespace ASMaIoP.Client.ViewModels
             {
                 if (ASMaIoP.Models.ApplicationAPIs.session.Auth(String.Empty, pass, Login))
                 {
-                    if (ASMaIoP.Models.ApplicationAPIs.session.AccessLevel >= 3)
-                    {
-                        MainWindow inst = MainWindow.Instance;
-                        inst.Show();
-                        inst.TopPanel.Visibility = Visibility.Visible;
-                        Parent.Hide();
-                    }
-                    else
-                    {
-                        MainWindow.Instance.Show();
-                        Parent.Hide();
-                    }
+                    UpdateMainWindow();
                 }
                 else
                     MessageBox.Show("Еблан лечи голову");
@@ -94,6 +71,22 @@ namespace ASMaIoP.Client.ViewModels
                 MessageBox.Show($"[AuthVM.cs]:{ex.Message}");
             }
         }
+
+        private void UpdateMainWindow()
+        {
+
+            if (ASMaIoP.Models.ApplicationAPIs.session.AccessLevel >= 3)
+            {
+                MainWindow inst = MainWindow.Instance;
+                inst.Show();
+                inst.TopPanel.Visibility = Visibility.Visible;
+                Parent.Hide();
+            }
+            else
+            {
+                MainWindow.Instance.Show();
+            }
+        }   
 
     }
 }

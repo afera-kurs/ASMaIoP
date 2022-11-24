@@ -105,7 +105,7 @@
                         <ColumnDefinition Width="70"/>
                     </Grid.ColumnDefinitions>
                     <Button Style="{DynamicResource RoundCorner}" Click="Button_Click" Height="50" Grid.Column="1" HorizontalAlignment="Center" FontSize="18" Foreground="#093b46" Background="#cdd0c8" Content="Редактировать"></Button>
-                    <Button Style="{DynamicResource RoundCorner}" Height="50" Grid.Column="2" HorizontalAlignment="Center" FontSize="22" Foreground="#093b46" Background="#cdd0c8" Content="Bytton1"></Button>
+                    <Button Style="{DynamicResource RoundCorner}" Click="Button_Click_1" Height="50" Grid.Column="2" HorizontalAlignment="Center" FontSize="22" Foreground="#093b46" Background="#cdd0c8" Content="Bytton1"></Button>
                     <Button Style="{DynamicResource RoundCorner}" Height="50" Grid.Column="3" HorizontalAlignment="Center" FontSize="22" Foreground="#093b46" Background="#cdd0c8" Content="Bytton1"></Button>
                     <Button Style="{DynamicResource RoundCorner}" Height="50" Grid.Column="4" HorizontalAlignment="Center" FontSize="22" Foreground="#093b46" Background="#cdd0c8" Content="Bytton1"></Button>
                     <Button Style="{DynamicResource RoundCorner}" Height="50" Grid.Column="5" HorizontalAlignment="Center" FontSize="22" Foreground="#093b46" Background="#cdd0c8" Content="Bytton1"></Button>

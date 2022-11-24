@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="ASMaIoP.Client.View.Pages.TabelRight"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ASMaIoP.Client.View.Pages" xmlns:viewmodels="clr-namespace:ASMaIoP.Client.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:Tabel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="470" d:DesignWidth="600">
+    <Grid>
+        <DataGrid x:Name="TabelDataGrid"
+                  Background="Transparent"
+                  RowBackground="Transparent"
+                  ItemsSource="{Binding TabelColumn}" 
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  Margin="20"
+                  >
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.RowHeaderStyle>
+                <Style TargetType="{x:Type DataGridRowHeader}">
+                    <Setter Property="Background" Value="Transparent" />
+                </Style>
+            </DataGrid.RowHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер" Binding="{Binding Path=ID}" Width="80"/>
+                <DataGridTextColumn Header="Работник" Binding="{Binding Path=Employee}" Width="100"/>
+                <DataGridTextColumn Header="Должность" Binding="{Binding Path=Role}" Width="100"/>
+                <DataGridTextColumn Header="Прибыл" Binding="{Binding Path=Comes}" Width="150"/>
+                <DataGridTextColumn Header="Покинул" Binding="{Binding Path=Leave}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

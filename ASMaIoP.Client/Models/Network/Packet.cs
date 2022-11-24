@@ -20,7 +20,8 @@ namespace ASMaIoP.Models.Network
         ADMIN_ROLES_EDIT = 9,
         ADMIN_ROLE_CREATE = 10,
         ADMIN_ROLE_REMOVE = 11,
-        DISCONNECT = 12 
+        DISCONNECT = 12,
+        LOAD_TABEL = 13
     }
 
     internal class Packet
