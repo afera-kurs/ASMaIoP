@@ -24,10 +24,10 @@ using System.Security.Cryptography;
 using System.Xml.Linq;
 using System.Data;
 using System.Globalization;
-using CefSharp.DevTools.CacheStorage;
 
 namespace ASMaIoP.Client.ViewModels
 {
+    //Класс для структирование данных в списке.
     public class TabelColumn
     {
         public int ID {get; set; }
@@ -39,17 +39,12 @@ namespace ASMaIoP.Client.ViewModels
 
     public class Tabel : INotifyPropertyChanged
     {
+        //Создаём авто-свойства тк DataGrid отказваться считвать из листа.
         public List<TabelColumn> TabelColumn{get; set;}
-
-        //public DataTable bind = new DataTable();
 
         public Tabel()
         {
             TabelColumn = new();
-
-            TabelColumn.Add(new TabelColumn{ID = 3, Employee ="dsfsdf", Role ="123", Comes = "nepr", Leave = "neysh"});
-
-            //ASMaIoP.Client.View.Pages.TabelRight.Instance.TabelDataGrid.ItemsSource = TabelColumn;
             instance = this;
         }
 
@@ -62,7 +57,7 @@ namespace ASMaIoP.Client.ViewModels
                 MessageBox.Show("вы что дебилы свойтсво ломать!");
             }    
         }
-
+        //Метод
         public void LoadTabel(DateTime? time)
         {       
             if(time == null) 
@@ -70,13 +65,6 @@ namespace ASMaIoP.Client.ViewModels
                 MessageBox.Show("Выберите дату идиоты!");
                 return;
             }
-            
-            //DataTable dt = new DataTable();
-            //dt.Columns.Add("ID");
-            //dt.Columns.Add("Employee");
-            //dt.Columns.Add("Role");
-            //dt.Columns.Add("Comes");
-            //dt.Columns.Add("Leave");
 
             try
             {
@@ -95,14 +83,14 @@ namespace ASMaIoP.Client.ViewModels
                     MessageBox.Show("лечите голову безголовые");
                     return;
                 }
-
+                //Форматируем дату под нужный формат
                 string date = time?.ToString("yyyy-MM-dd");
                 ApplicationAPIs.session.Write(packet.GetBytes());
 
                 ApplicationAPIs.session.Write(date);
 
                 int nCount = ApplicationAPIs.session.ReadInt();
-
+                //Циклом записваем значение в класс
                 for(int i = 0; i < nCount; i++)
                 {
                     TabelColumn col = new();
@@ -118,17 +106,7 @@ namespace ASMaIoP.Client.ViewModels
                     else
                         col.Leave = "иди *****";
 
-                    //DataRow dr = dt.NewRow();
-                    //dr["ID"] = col.ID;
-                    //dr["Employee"] = col.Employee;
-                    //dr["Role"] = col.Role;
-                    //dr["Comes"] = col.Comes;
-                    //dr["Leave"] = col.Leave;
                     TabelColumn.Add(col);
-
-                    //ASMaIoP.Client.View.Pages.TabelRight.Instance.TabelDataGrid.Items.Add(col);
-
-                    //dt.Rows.Add(dr);
                 }
 
                 // закрываем соединение с сервером
