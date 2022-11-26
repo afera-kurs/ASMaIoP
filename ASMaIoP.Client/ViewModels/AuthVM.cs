@@ -25,7 +25,7 @@ namespace ASMaIoP.Client.ViewModels
                 this.pass = value;
             }
         }
-        Устанавливаем parent дабы связаться с окном
+        //Устанавливаем parent дабы связаться с окном
         AuthWindow Parent;
 
         public AuthVM(AuthWindow Parent)
@@ -79,16 +79,17 @@ namespace ASMaIoP.Client.ViewModels
         private void UpdateMainWindow()
         {
             if (ASMaIoP.Models.ApplicationAPIs.session.AccessLevel >= 3)
-                {
-                    MainWindow.Instance.Show();
-                    MainWindow.Instance.TopPanel.Visibility = Visibility.Visible;
-                    Parent.Close();
-                }
+            {
+                MainWindow mW = MainWindow.Instance;
+                mW.TopPanel.Visibility = Visibility.Visible;
+                mW.Show();
+                Parent.Close();
+            }
             else
-                {
-                    MainWindow.Instance.Show();
-                    Parent.Close();
-                }
+            {
+                MainWindow.Instance.Show();
+                Parent.Close();
+            }
         }   
 
     }

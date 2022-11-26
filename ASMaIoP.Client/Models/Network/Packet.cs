@@ -99,13 +99,13 @@ namespace ASMaIoP.Models.Network
 
         public string GetString(int nStart, int nCount)
         {
-            return Encoding.Default.GetString(lBytes.ToArray(), nStart, nCount);
+            return Encoding.UTF8.GetString(lBytes.ToArray(), nStart, nCount);
         }
 
         public void EncryptSE(string key)
         {
             PacketType nTmp = (PacketType)lBytes[0];
-            byte[] KeyBytes = Encoding.Default.GetBytes(key);
+            byte[] KeyBytes = Encoding.UTF8.GetBytes(key);
             int nKeyLen = KeyBytes.Length;
             int nKeyCounter = 0;
 

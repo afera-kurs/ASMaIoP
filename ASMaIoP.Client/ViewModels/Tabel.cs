@@ -44,7 +44,7 @@ namespace ASMaIoP.Client.ViewModels
 
         public Tabel()
         {
-            TabelColumn = new();
+            TabelColumn = new List<TabelColumn>();
             instance = this;
         }
 
@@ -93,7 +93,7 @@ namespace ASMaIoP.Client.ViewModels
                 //Циклом записваем значение в класс
                 for(int i = 0; i < nCount; i++)
                 {
-                    TabelColumn col = new();
+                    TabelColumn col = new TabelColumn();
 
                     col.ID  = ApplicationAPIs.session.ReadInt();
                     col.Employee = ApplicationAPIs.session.ReadString();
@@ -123,6 +123,6 @@ namespace ASMaIoP.Client.ViewModels
             }
         }
         
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

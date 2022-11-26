@@ -23,6 +23,8 @@ using ASMaIoP.Models.Utilities;
 
 namespace ASMaIoP.Client.ViewModels
 {
+
+
     internal class EmployeeInfo
     {
         public int EmployeeId;
@@ -41,6 +43,20 @@ namespace ASMaIoP.Client.ViewModels
 
     internal class CreateProf : INotifyPropertyChanged
     {
+        //Вычисление хэша строки и возрат его из метода
+        static string sha256(string randomString)
+        {
+            //Тут происходит криптографическая магия. Смысл данного метода заключается в том, что строка залетает в метод
+            var crypt = new System.Security.Cryptography.SHA256Managed();
+            var hash = new System.Text.StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(randomString));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("x2"));
+            }
+            return hash.ToString();
+        }
+
         public string Name;
         public string Surname;
         public string cardID;
@@ -96,7 +112,15 @@ namespace ASMaIoP.Client.ViewModels
 
         public void EnableCardRecvining(bool Enable)
         {
-            ArduinoAPI.SetCardReceiver(Enable? ReadCard : null);
+            if (Enable)
+            {
+                ArduinoAPI.SetCardReceiver(ReadCard);
+            }
+            else
+            {
+                ArduinoAPI.SetCardReceiver(null);
+            }
+
         }
 
         public void EditUser(int UserId, int JobId, string Name, string Surname)
@@ -198,7 +222,7 @@ namespace ASMaIoP.Client.ViewModels
             ApplicationAPIs.session.Write(Name);
             ApplicationAPIs.session.Write(Surname);
             ApplicationAPIs.session.Write(Login);
-            ApplicationAPIs.session.Write(Password);
+            ApplicationAPIs.session.Write(sha256(Password));
             ApplicationAPIs.session.Write(CardId);
             ApplicationAPIs.session.Write(FirstWorkDay);
                 
@@ -340,25 +364,28 @@ namespace ASMaIoP.Client.ViewModels
             }
         }
 
+        static char[] symbolsTable = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', '1', '2', '3', '4', '5', '6', '7', '8', '9', '_', ';' };
+
         public static string GenLogin(string name, string surname)
         {
             string Fullname = name + surname;
             string RawLogin = Strings.cyr2lat(Fullname);
             Random rnd = new Random();
-            for (int i = 0; i < 3; i++) RawLogin += (char)rnd.Next();
+            for (int i = 0; i < 3; i++) RawLogin += symbolsTable[rnd.Next(0, symbolsTable.Length)];
             return RawLogin;
         }
 
         public static string GenPassword()
         {
+
             Random rnd = new Random();
             string RawPassword = "";
-            for (int i = 0; i < 8; i++) RawPassword += (char)rnd.Next();
+            for (int i = 0; i < 8; i++) RawPassword += symbolsTable[rnd.Next(0, symbolsTable.Length)];
 
             return RawPassword;
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
     }
 }

@@ -1,358 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {
-      "CefSharp.Common.NETCore/107.1.40": {
-        "type": "package",
-        "dependencies": {
-          "chromiumembeddedframework.runtime": "[107.1.4]"
-        },
-        "compile": {
-          "ref/netcoreapp3.1/CefSharp.Core.Runtime.dll": {},
-          "ref/netcoreapp3.1/CefSharp.Core.dll": {},
-          "ref/netcoreapp3.1/CefSharp.dll": {}
-        },
-        "build": {
-          "buildTransitive/CefSharp.Common.NETCore.targets": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win-arm64/lib/netcoreapp3.1/CefSharp.Core.Runtime.dll": {
-            "assetType": "runtime",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/lib/netcoreapp3.1/CefSharp.Core.dll": {
-            "assetType": "runtime",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/lib/netcoreapp3.1/CefSharp.dll": {
-            "assetType": "runtime",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/lib/netcoreapp3.1/Ijwhost.dll": {
-            "assetType": "runtime",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/CefSharp.BrowserSubprocess.Core.dll": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/CefSharp.BrowserSubprocess.dll": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/CefSharp.BrowserSubprocess.exe": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/CefSharp.BrowserSubprocess.runtimeconfig.json": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.Core.Runtime.dll": {
-            "assetType": "runtime",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.Core.dll": {
-            "assetType": "runtime",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.dll": {
-            "assetType": "runtime",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/lib/netcoreapp3.1/Ijwhost.dll": {
-            "assetType": "runtime",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/CefSharp.BrowserSubprocess.Core.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/CefSharp.BrowserSubprocess.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/CefSharp.BrowserSubprocess.exe": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/CefSharp.BrowserSubprocess.runtimeconfig.json": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.Core.Runtime.dll": {
-            "assetType": "runtime",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.Core.dll": {
-            "assetType": "runtime",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.dll": {
-            "assetType": "runtime",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/lib/netcoreapp3.1/Ijwhost.dll": {
-            "assetType": "runtime",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/CefSharp.BrowserSubprocess.Core.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/CefSharp.BrowserSubprocess.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/CefSharp.BrowserSubprocess.exe": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/CefSharp.BrowserSubprocess.runtimeconfig.json": {
-            "assetType": "native",
-            "rid": "win-x86"
-          }
-        }
-      },
-      "CefSharp.Wpf.NETCore/107.1.40": {
-        "type": "package",
-        "dependencies": {
-          "CefSharp.Common.NETCore": "[107.1.40]"
-        },
-        "compile": {
-          "ref/netcoreapp3.1/CefSharp.Wpf.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/CefSharp.Wpf.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "chromiumembeddedframework.runtime/107.1.4": {
-        "type": "package",
-        "build": {
-          "buildTransitive/chromiumembeddedframework.runtime.props": {}
-        }
-      },
-      "chromiumembeddedframework.runtime.win-arm64/107.1.4": {
-        "type": "package",
-        "runtimeTargets": {
-          "runtimes/win-arm64/native/chrome_100_percent.pak": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/chrome_200_percent.pak": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/chrome_elf.dll": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/icudtl.dat": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/libEGL.dll": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/libGLESv2.dll": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/libcef.dll": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/resources.pak": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/snapshot_blob.bin": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/v8_context_snapshot.bin": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/vk_swiftshader.dll": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/vk_swiftshader_icd.json": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-arm64/native/vulkan-1.dll": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          }
-        }
-      },
-      "chromiumembeddedframework.runtime.win-x64/107.1.4": {
-        "type": "package",
-        "runtimeTargets": {
-          "runtimes/win-x64/native/chrome_100_percent.pak": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/chrome_200_percent.pak": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/chrome_elf.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/d3dcompiler_47.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/icudtl.dat": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/libEGL.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/libGLESv2.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/libcef.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/resources.pak": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/snapshot_blob.bin": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/v8_context_snapshot.bin": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/vk_swiftshader.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/vk_swiftshader_icd.json": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/vulkan-1.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          }
-        }
-      },
-      "chromiumembeddedframework.runtime.win-x86/107.1.4": {
-        "type": "package",
-        "runtimeTargets": {
-          "runtimes/win-x86/native/chrome_100_percent.pak": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/chrome_200_percent.pak": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/chrome_elf.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/d3dcompiler_47.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/icudtl.dat": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/libEGL.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/libGLESv2.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/libcef.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/resources.pak": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/snapshot_blob.bin": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/v8_context_snapshot.bin": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/vk_swiftshader.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/vk_swiftshader_icd.json": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/vulkan-1.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          }
-        }
-      },
+    ".NETFramework,Version=v4.7.2": {
       "ControlzEx/4.4.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Xaml.Behaviors.Wpf": "1.1.19",
-          "System.Text.Json": "4.7.2"
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.19"
         },
+        "frameworkAssemblies": [
+          "System.Web",
+          "System.Web.Extensions"
+        ],
         "compile": {
-          "lib/netcoreapp3.1/ControlzEx.dll": {
+          "lib/net462/ControlzEx.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/ControlzEx.dll": {
+          "lib/net462/ControlzEx.dll": {
             "related": ".pdb;.xml"
           }
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
+        }
       },
       "MahApps.Metro/2.4.9": {
         "type": "package",
         "dependencies": {
           "ControlzEx": "[4.4.0, 6.0.0)"
         },
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations",
+          "System.Configuration"
+        ],
         "compile": {
-          "lib/netcoreapp3.1/MahApps.Metro.dll": {
+          "lib/net47/MahApps.Metro.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/MahApps.Metro.dll": {
+          "lib/net47/MahApps.Metro.dll": {
             "related": ".pdb;.xml"
           }
         },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ],
         "resource": {
-          "lib/netcoreapp3.1/de/MahApps.Metro.resources.dll": {
+          "lib/net47/de/MahApps.Metro.resources.dll": {
             "locale": "de"
           }
         }
@@ -360,12 +50,12 @@
       "MaterialDesignColors/2.0.9": {
         "type": "package",
         "compile": {
-          "lib/net6.0/MaterialDesignColors.dll": {
+          "lib/net462/MaterialDesignColors.dll": {
             "related": ".pdb"
           }
         },
         "runtime": {
-          "lib/net6.0/MaterialDesignColors.dll": {
+          "lib/net462/MaterialDesignColors.dll": {
             "related": ".pdb"
           }
         }
@@ -377,47 +67,47 @@
           "MaterialDesignThemes": "3.2.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/MaterialDesignExtensions.dll": {
+          "lib/net45/MaterialDesignExtensions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.1/MaterialDesignExtensions.dll": {
+          "lib/net45/MaterialDesignExtensions.dll": {
             "related": ".xml"
           }
         },
         "resource": {
-          "lib/netcoreapp3.1/Ru/MaterialDesignExtensions.resources.dll": {
+          "lib/net45/Ru/MaterialDesignExtensions.resources.dll": {
             "locale": "Ru"
           },
-          "lib/netcoreapp3.1/ar-DZ/MaterialDesignExtensions.resources.dll": {
+          "lib/net45/ar-DZ/MaterialDesignExtensions.resources.dll": {
             "locale": "ar-DZ"
           },
-          "lib/netcoreapp3.1/cs-CZ/MaterialDesignExtensions.resources.dll": {
+          "lib/net45/cs-CZ/MaterialDesignExtensions.resources.dll": {
             "locale": "cs-CZ"
           },
-          "lib/netcoreapp3.1/cs/MaterialDesignExtensions.resources.dll": {
+          "lib/net45/cs/MaterialDesignExtensions.resources.dll": {
             "locale": "cs"
           },
-          "lib/netcoreapp3.1/de/MaterialDesignExtensions.resources.dll": {
+          "lib/net45/de/MaterialDesignExtensions.resources.dll": {
             "locale": "de"
           },
-          "lib/netcoreapp3.1/fr-FR/MaterialDesignExtensions.resources.dll": {
+          "lib/net45/fr-FR/MaterialDesignExtensions.resources.dll": {
             "locale": "fr-FR"
           },
-          "lib/netcoreapp3.1/fr/MaterialDesignExtensions.resources.dll": {
+          "lib/net45/fr/MaterialDesignExtensions.resources.dll": {
             "locale": "fr"
           },
-          "lib/netcoreapp3.1/pt-BR/MaterialDesignExtensions.resources.dll": {
+          "lib/net45/pt-BR/MaterialDesignExtensions.resources.dll": {
             "locale": "pt-BR"
           },
-          "lib/netcoreapp3.1/pt/MaterialDesignExtensions.resources.dll": {
+          "lib/net45/pt/MaterialDesignExtensions.resources.dll": {
             "locale": "pt"
           },
-          "lib/netcoreapp3.1/ru-ru/MaterialDesignExtensions.resources.dll": {
+          "lib/net45/ru-ru/MaterialDesignExtensions.resources.dll": {
             "locale": "ru-ru"
           },
-          "lib/netcoreapp3.1/uz-Latn-UZ/MaterialDesignExtensions.resources.dll": {
+          "lib/net45/uz-Latn-UZ/MaterialDesignExtensions.resources.dll": {
             "locale": "uz-Latn-UZ"
           }
         }
@@ -428,12 +118,12 @@
           "MaterialDesignColors": "[2.0.9, 3.0.0)"
         },
         "compile": {
-          "lib/net6.0/MaterialDesignThemes.Wpf.dll": {
+          "lib/net462/MaterialDesignThemes.Wpf.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/net6.0/MaterialDesignThemes.Wpf.dll": {
+          "lib/net462/MaterialDesignThemes.Wpf.dll": {
             "related": ".pdb;.xml"
           }
         },
@@ -444,130 +134,246 @@
       "MaterialDesignThemes.MahApps/0.2.5": {
         "type": "package",
         "dependencies": {
-          "MahApps.Metro": "[2.0.0, 3.0.0)",
+          "MahApps.Metro": "[2.0.0-alpha0748, 3.0.0)",
           "MaterialDesignColors": "[2.0.9, 3.0.0)",
           "MaterialDesignThemes": "[4.6.1, 5.0.0)"
         },
         "compile": {
-          "lib/net6.0/MaterialDesignThemes.MahApps.dll": {
+          "lib/net462/MaterialDesignThemes.MahApps.dll": {
             "related": ".pdb"
           }
         },
         "runtime": {
-          "lib/net6.0/MaterialDesignThemes.MahApps.dll": {
+          "lib/net462/MaterialDesignThemes.MahApps.dll": {
             "related": ".pdb"
           }
         }
       },
       "Microsoft.Xaml.Behaviors.Wpf/1.1.19": {
         "type": "package",
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.Core",
+          "System.XML",
+          "System.Xaml",
+          "WindowsBase"
+        ],
         "compile": {
-          "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll": {
+          "lib/net45/Microsoft.Xaml.Behaviors.dll": {
             "related": ".pdb;.xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.0/Microsoft.Xaml.Behaviors.dll": {
+          "lib/net45/Microsoft.Xaml.Behaviors.dll": {
             "related": ".pdb;.xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      },
-      "runtime.linux-arm.runtime.native.System.IO.Ports/6.0.0": {
-        "type": "package",
-        "runtimeTargets": {
-          "runtimes/linux-arm/native/libSystem.IO.Ports.Native.so": {
-            "assetType": "native",
-            "rid": "linux-arm"
-          }
-        }
-      },
-      "runtime.linux-arm64.runtime.native.System.IO.Ports/6.0.0": {
-        "type": "package",
-        "runtimeTargets": {
-          "runtimes/linux-arm64/native/libSystem.IO.Ports.Native.so": {
-            "assetType": "native",
-            "rid": "linux-arm64"
-          }
-        }
-      },
-      "runtime.linux-x64.runtime.native.System.IO.Ports/6.0.0": {
-        "type": "package",
-        "runtimeTargets": {
-          "runtimes/linux-x64/native/libSystem.IO.Ports.Native.so": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          }
-        }
-      },
-      "runtime.native.System.IO.Ports/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "runtime.linux-arm.runtime.native.System.IO.Ports": "6.0.0",
-          "runtime.linux-arm64.runtime.native.System.IO.Ports": "6.0.0",
-          "runtime.linux-x64.runtime.native.System.IO.Ports": "6.0.0",
-          "runtime.osx-arm64.runtime.native.System.IO.Ports": "6.0.0",
-          "runtime.osx-x64.runtime.native.System.IO.Ports": "6.0.0"
-        }
-      },
-      "runtime.osx-arm64.runtime.native.System.IO.Ports/6.0.0": {
-        "type": "package",
-        "runtimeTargets": {
-          "runtimes/osx-arm64/native/libSystem.IO.Ports.Native.dylib": {
-            "assetType": "native",
-            "rid": "osx-arm64"
-          }
-        }
-      },
-      "runtime.osx-x64.runtime.native.System.IO.Ports/6.0.0": {
-        "type": "package",
-        "runtimeTargets": {
-          "runtimes/osx-x64/native/libSystem.IO.Ports.Native.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
           }
         }
       },
       "System.IO.Ports/6.0.0": {
         "type": "package",
-        "dependencies": {
-          "runtime.native.System.IO.Ports": "6.0.0"
-        },
         "compile": {
-          "lib/net6.0/System.IO.Ports.dll": {
+          "lib/net461/System.IO.Ports.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/System.IO.Ports.dll": {
+          "lib/net461/System.IO.Ports.dll": {
             "related": ".xml"
           }
         },
-        "build": {
-          "buildTransitive/netcoreapp3.1/_._": {}
-        },
         "runtimeTargets": {
-          "runtimes/unix/lib/net6.0/System.IO.Ports.dll": {
+          "runtimes/unix/lib/netstandard2.0/System.IO.Ports.dll": {
             "assetType": "runtime",
             "rid": "unix"
           },
-          "runtimes/win/lib/net6.0/System.IO.Ports.dll": {
+          "runtimes/win/lib/net461/System.IO.Ports.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
         }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win7-x86": {
+      "ControlzEx/4.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.19"
+        },
+        "frameworkAssemblies": [
+          "System.Web",
+          "System.Web.Extensions"
+        ],
+        "compile": {
+          "lib/net462/ControlzEx.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/ControlzEx.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
       },
-      "System.Text.Json/4.7.2": {
+      "MahApps.Metro/2.4.9": {
+        "type": "package",
+        "dependencies": {
+          "ControlzEx": "[4.4.0, 6.0.0)"
+        },
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations",
+          "System.Configuration"
+        ],
+        "compile": {
+          "lib/net47/MahApps.Metro.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net47/MahApps.Metro.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "resource": {
+          "lib/net47/de/MahApps.Metro.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "MaterialDesignColors/2.0.9": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {
+          "lib/net462/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net462/MaterialDesignColors.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "MaterialDesignExtensions/3.3.0": {
+        "type": "package",
+        "dependencies": {
+          "MaterialDesignColors": "1.2.7",
+          "MaterialDesignThemes": "3.2.0"
+        },
+        "compile": {
+          "lib/net45/MaterialDesignExtensions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netcoreapp3.0/System.Text.Json.dll": {
+          "lib/net45/MaterialDesignExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "resource": {
+          "lib/net45/Ru/MaterialDesignExtensions.resources.dll": {
+            "locale": "Ru"
+          },
+          "lib/net45/ar-DZ/MaterialDesignExtensions.resources.dll": {
+            "locale": "ar-DZ"
+          },
+          "lib/net45/cs-CZ/MaterialDesignExtensions.resources.dll": {
+            "locale": "cs-CZ"
+          },
+          "lib/net45/cs/MaterialDesignExtensions.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net45/de/MaterialDesignExtensions.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net45/fr-FR/MaterialDesignExtensions.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net45/fr/MaterialDesignExtensions.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net45/pt-BR/MaterialDesignExtensions.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net45/pt/MaterialDesignExtensions.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net45/ru-ru/MaterialDesignExtensions.resources.dll": {
+            "locale": "ru-ru"
+          },
+          "lib/net45/uz-Latn-UZ/MaterialDesignExtensions.resources.dll": {
+            "locale": "uz-Latn-UZ"
+          }
+        }
+      },
+      "MaterialDesignThemes/4.6.1": {
+        "type": "package",
+        "dependencies": {
+          "MaterialDesignColors": "[2.0.9, 3.0.0)"
+        },
+        "compile": {
+          "lib/net462/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net462/MaterialDesignThemes.Wpf.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "build/MaterialDesignThemes.targets": {}
+        }
+      },
+      "MaterialDesignThemes.MahApps/0.2.5": {
+        "type": "package",
+        "dependencies": {
+          "MahApps.Metro": "[2.0.0-alpha0748, 3.0.0)",
+          "MaterialDesignColors": "[2.0.9, 3.0.0)",
+          "MaterialDesignThemes": "[4.6.1, 5.0.0)"
+        },
+        "compile": {
+          "lib/net462/MaterialDesignThemes.MahApps.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net462/MaterialDesignThemes.MahApps.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.19": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.Core",
+          "System.XML",
+          "System.Xaml",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Xaml.Behaviors.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Xaml.Behaviors.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "System.IO.Ports/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net461/System.IO.Ports.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "runtimes/win/lib/net461/System.IO.Ports.dll": {
             "related": ".xml"
           }
         }
@@ -575,337 +381,6 @@
     }
   },
   "libraries": {
-    "CefSharp.Common.NETCore/107.1.40": {
-      "sha512": "zsssKr8MRQjl5DuZkjrdmv7ZIbhwXivKKDXOx41rxL1GZfBBJoOv/he8TlAs+L8ZNlb7YLuW4ws5fSe55jaqjQ==",
-      "type": "package",
-      "path": "cefsharp.common.netcore/107.1.40",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "buildTransitive/CefSharp.Common.NETCore.targets",
-        "cefsharp.common.netcore.107.1.40.nupkg.sha512",
-        "cefsharp.common.netcore.nuspec",
-        "ref/netcoreapp3.1/CefSharp.Core.Runtime.dll",
-        "ref/netcoreapp3.1/CefSharp.Core.dll",
-        "ref/netcoreapp3.1/CefSharp.dll",
-        "runtimes/win-arm64/lib/netcoreapp3.1/CefSharp.BrowserSubprocess.Core.pdb",
-        "runtimes/win-arm64/lib/netcoreapp3.1/CefSharp.Core.Runtime.dll",
-        "runtimes/win-arm64/lib/netcoreapp3.1/CefSharp.Core.Runtime.pdb",
-        "runtimes/win-arm64/lib/netcoreapp3.1/CefSharp.Core.dll",
-        "runtimes/win-arm64/lib/netcoreapp3.1/CefSharp.Core.xml",
-        "runtimes/win-arm64/lib/netcoreapp3.1/CefSharp.dll",
-        "runtimes/win-arm64/lib/netcoreapp3.1/CefSharp.xml",
-        "runtimes/win-arm64/lib/netcoreapp3.1/Ijwhost.dll",
-        "runtimes/win-arm64/native/CefSharp.BrowserSubprocess.Core.dll",
-        "runtimes/win-arm64/native/CefSharp.BrowserSubprocess.dll",
-        "runtimes/win-arm64/native/CefSharp.BrowserSubprocess.exe",
-        "runtimes/win-arm64/native/CefSharp.BrowserSubprocess.runtimeconfig.json",
-        "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.BrowserSubprocess.Core.pdb",
-        "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.Core.Runtime.dll",
-        "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.Core.Runtime.pdb",
-        "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.Core.dll",
-        "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.Core.xml",
-        "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.dll",
-        "runtimes/win-x64/lib/netcoreapp3.1/CefSharp.xml",
-        "runtimes/win-x64/lib/netcoreapp3.1/Ijwhost.dll",
-        "runtimes/win-x64/native/CefSharp.BrowserSubprocess.Core.dll",
-        "runtimes/win-x64/native/CefSharp.BrowserSubprocess.dll",
-        "runtimes/win-x64/native/CefSharp.BrowserSubprocess.exe",
-        "runtimes/win-x64/native/CefSharp.BrowserSubprocess.runtimeconfig.json",
-        "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.BrowserSubprocess.Core.pdb",
-        "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.Core.Runtime.dll",
-        "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.Core.Runtime.pdb",
-        "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.Core.dll",
-        "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.Core.xml",
-        "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.dll",
-        "runtimes/win-x86/lib/netcoreapp3.1/CefSharp.xml",
-        "runtimes/win-x86/lib/netcoreapp3.1/Ijwhost.dll",
-        "runtimes/win-x86/native/CefSharp.BrowserSubprocess.Core.dll",
-        "runtimes/win-x86/native/CefSharp.BrowserSubprocess.dll",
-        "runtimes/win-x86/native/CefSharp.BrowserSubprocess.exe",
-        "runtimes/win-x86/native/CefSharp.BrowserSubprocess.runtimeconfig.json"
-      ]
-    },
-    "CefSharp.Wpf.NETCore/107.1.40": {
-      "sha512": "UqzVhPsqXc9Zib/bn3vlw7NMD19eA5tXFGtaT8FKfKtfsJhh3wzpIqD4sY30tR470kN6igiLiZqr2o8/i2JtIg==",
-      "type": "package",
-      "path": "cefsharp.wpf.netcore/107.1.40",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "Readme.txt",
-        "cefsharp.wpf.netcore.107.1.40.nupkg.sha512",
-        "cefsharp.wpf.netcore.nuspec",
-        "lib/netcoreapp3.1/CefSharp.Wpf.dll",
-        "lib/netcoreapp3.1/CefSharp.Wpf.xml",
-        "ref/netcoreapp3.1/CefSharp.Wpf.dll"
-      ]
-    },
-    "chromiumembeddedframework.runtime/107.1.4": {
-      "sha512": "GQmBgs4DPiv5jAPy99t+FMBuMkhwrSN3bmq3WOvOhJYDChYR8DHBkk9uF+j7Ys9De1APm/sU9K5Ry48eEPtLGQ==",
-      "type": "package",
-      "path": "chromiumembeddedframework.runtime/107.1.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "CEF/win-arm64/locales/af.pak",
-        "CEF/win-arm64/locales/am.pak",
-        "CEF/win-arm64/locales/ar.pak",
-        "CEF/win-arm64/locales/bg.pak",
-        "CEF/win-arm64/locales/bn.pak",
-        "CEF/win-arm64/locales/ca.pak",
-        "CEF/win-arm64/locales/cs.pak",
-        "CEF/win-arm64/locales/da.pak",
-        "CEF/win-arm64/locales/de.pak",
-        "CEF/win-arm64/locales/el.pak",
-        "CEF/win-arm64/locales/en-GB.pak",
-        "CEF/win-arm64/locales/en-US.pak",
-        "CEF/win-arm64/locales/es-419.pak",
-        "CEF/win-arm64/locales/es.pak",
-        "CEF/win-arm64/locales/et.pak",
-        "CEF/win-arm64/locales/fa.pak",
-        "CEF/win-arm64/locales/fi.pak",
-        "CEF/win-arm64/locales/fil.pak",
-        "CEF/win-arm64/locales/fr.pak",
-        "CEF/win-arm64/locales/gu.pak",
-        "CEF/win-arm64/locales/he.pak",
-        "CEF/win-arm64/locales/hi.pak",
-        "CEF/win-arm64/locales/hr.pak",
-        "CEF/win-arm64/locales/hu.pak",
-        "CEF/win-arm64/locales/id.pak",
-        "CEF/win-arm64/locales/it.pak",
-        "CEF/win-arm64/locales/ja.pak",
-        "CEF/win-arm64/locales/kn.pak",
-        "CEF/win-arm64/locales/ko.pak",
-        "CEF/win-arm64/locales/lt.pak",
-        "CEF/win-arm64/locales/lv.pak",
-        "CEF/win-arm64/locales/ml.pak",
-        "CEF/win-arm64/locales/mr.pak",
-        "CEF/win-arm64/locales/ms.pak",
-        "CEF/win-arm64/locales/nb.pak",
-        "CEF/win-arm64/locales/nl.pak",
-        "CEF/win-arm64/locales/pl.pak",
-        "CEF/win-arm64/locales/pt-BR.pak",
-        "CEF/win-arm64/locales/pt-PT.pak",
-        "CEF/win-arm64/locales/ro.pak",
-        "CEF/win-arm64/locales/ru.pak",
-        "CEF/win-arm64/locales/sk.pak",
-        "CEF/win-arm64/locales/sl.pak",
-        "CEF/win-arm64/locales/sr.pak",
-        "CEF/win-arm64/locales/sv.pak",
-        "CEF/win-arm64/locales/sw.pak",
-        "CEF/win-arm64/locales/ta.pak",
-        "CEF/win-arm64/locales/te.pak",
-        "CEF/win-arm64/locales/th.pak",
-        "CEF/win-arm64/locales/tr.pak",
-        "CEF/win-arm64/locales/uk.pak",
-        "CEF/win-arm64/locales/ur.pak",
-        "CEF/win-arm64/locales/vi.pak",
-        "CEF/win-arm64/locales/zh-CN.pak",
-        "CEF/win-arm64/locales/zh-TW.pak",
-        "CEF/win-x64/locales/af.pak",
-        "CEF/win-x64/locales/am.pak",
-        "CEF/win-x64/locales/ar.pak",
-        "CEF/win-x64/locales/bg.pak",
-        "CEF/win-x64/locales/bn.pak",
-        "CEF/win-x64/locales/ca.pak",
-        "CEF/win-x64/locales/cs.pak",
-        "CEF/win-x64/locales/da.pak",
-        "CEF/win-x64/locales/de.pak",
-        "CEF/win-x64/locales/el.pak",
-        "CEF/win-x64/locales/en-GB.pak",
-        "CEF/win-x64/locales/en-US.pak",
-        "CEF/win-x64/locales/es-419.pak",
-        "CEF/win-x64/locales/es.pak",
-        "CEF/win-x64/locales/et.pak",
-        "CEF/win-x64/locales/fa.pak",
-        "CEF/win-x64/locales/fi.pak",
-        "CEF/win-x64/locales/fil.pak",
-        "CEF/win-x64/locales/fr.pak",
-        "CEF/win-x64/locales/gu.pak",
-        "CEF/win-x64/locales/he.pak",
-        "CEF/win-x64/locales/hi.pak",
-        "CEF/win-x64/locales/hr.pak",
-        "CEF/win-x64/locales/hu.pak",
-        "CEF/win-x64/locales/id.pak",
-        "CEF/win-x64/locales/it.pak",
-        "CEF/win-x64/locales/ja.pak",
-        "CEF/win-x64/locales/kn.pak",
-        "CEF/win-x64/locales/ko.pak",
-        "CEF/win-x64/locales/lt.pak",
-        "CEF/win-x64/locales/lv.pak",
-        "CEF/win-x64/locales/ml.pak",
-        "CEF/win-x64/locales/mr.pak",
-        "CEF/win-x64/locales/ms.pak",
-        "CEF/win-x64/locales/nb.pak",
-        "CEF/win-x64/locales/nl.pak",
-        "CEF/win-x64/locales/pl.pak",
-        "CEF/win-x64/locales/pt-BR.pak",
-        "CEF/win-x64/locales/pt-PT.pak",
-        "CEF/win-x64/locales/ro.pak",
-        "CEF/win-x64/locales/ru.pak",
-        "CEF/win-x64/locales/sk.pak",
-        "CEF/win-x64/locales/sl.pak",
-        "CEF/win-x64/locales/sr.pak",
-        "CEF/win-x64/locales/sv.pak",
-        "CEF/win-x64/locales/sw.pak",
-        "CEF/win-x64/locales/ta.pak",
-        "CEF/win-x64/locales/te.pak",
-        "CEF/win-x64/locales/th.pak",
-        "CEF/win-x64/locales/tr.pak",
-        "CEF/win-x64/locales/uk.pak",
-        "CEF/win-x64/locales/ur.pak",
-        "CEF/win-x64/locales/vi.pak",
-        "CEF/win-x64/locales/zh-CN.pak",
-        "CEF/win-x64/locales/zh-TW.pak",
-        "CEF/win-x86/locales/af.pak",
-        "CEF/win-x86/locales/am.pak",
-        "CEF/win-x86/locales/ar.pak",
-        "CEF/win-x86/locales/bg.pak",
-        "CEF/win-x86/locales/bn.pak",
-        "CEF/win-x86/locales/ca.pak",
-        "CEF/win-x86/locales/cs.pak",
-        "CEF/win-x86/locales/da.pak",
-        "CEF/win-x86/locales/de.pak",
-        "CEF/win-x86/locales/el.pak",
-        "CEF/win-x86/locales/en-GB.pak",
-        "CEF/win-x86/locales/en-US.pak",
-        "CEF/win-x86/locales/es-419.pak",
-        "CEF/win-x86/locales/es.pak",
-        "CEF/win-x86/locales/et.pak",
-        "CEF/win-x86/locales/fa.pak",
-        "CEF/win-x86/locales/fi.pak",
-        "CEF/win-x86/locales/fil.pak",
-        "CEF/win-x86/locales/fr.pak",
-        "CEF/win-x86/locales/gu.pak",
-        "CEF/win-x86/locales/he.pak",
-        "CEF/win-x86/locales/hi.pak",
-        "CEF/win-x86/locales/hr.pak",
-        "CEF/win-x86/locales/hu.pak",
-        "CEF/win-x86/locales/id.pak",
-        "CEF/win-x86/locales/it.pak",
-        "CEF/win-x86/locales/ja.pak",
-        "CEF/win-x86/locales/kn.pak",
-        "CEF/win-x86/locales/ko.pak",
-        "CEF/win-x86/locales/lt.pak",
-        "CEF/win-x86/locales/lv.pak",
-        "CEF/win-x86/locales/ml.pak",
-        "CEF/win-x86/locales/mr.pak",
-        "CEF/win-x86/locales/ms.pak",
-        "CEF/win-x86/locales/nb.pak",
-        "CEF/win-x86/locales/nl.pak",
-        "CEF/win-x86/locales/pl.pak",
-        "CEF/win-x86/locales/pt-BR.pak",
-        "CEF/win-x86/locales/pt-PT.pak",
-        "CEF/win-x86/locales/ro.pak",
-        "CEF/win-x86/locales/ru.pak",
-        "CEF/win-x86/locales/sk.pak",
-        "CEF/win-x86/locales/sl.pak",
-        "CEF/win-x86/locales/sr.pak",
-        "CEF/win-x86/locales/sv.pak",
-        "CEF/win-x86/locales/sw.pak",
-        "CEF/win-x86/locales/ta.pak",
-        "CEF/win-x86/locales/te.pak",
-        "CEF/win-x86/locales/th.pak",
-        "CEF/win-x86/locales/tr.pak",
-        "CEF/win-x86/locales/uk.pak",
-        "CEF/win-x86/locales/ur.pak",
-        "CEF/win-x86/locales/vi.pak",
-        "CEF/win-x86/locales/zh-CN.pak",
-        "CEF/win-x86/locales/zh-TW.pak",
-        "LICENSE.txt",
-        "buildTransitive/chromiumembeddedframework.runtime.props",
-        "chromiumembeddedframework.runtime.107.1.4.nupkg.sha512",
-        "chromiumembeddedframework.runtime.nuspec",
-        "images/cef128x128.png",
-        "runtime.json"
-      ]
-    },
-    "chromiumembeddedframework.runtime.win-arm64/107.1.4": {
-      "sha512": "UVnKJJocvGi84yLmdGqOOsYCM895USUthqip6mi4U7ig6K5rl0n62qHGE2idM+5r9N+32zuiQPK8h4WDGCiRDw==",
-      "type": "package",
-      "path": "chromiumembeddedframework.runtime.win-arm64/107.1.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "README.txt",
-        "chromiumembeddedframework.runtime.win-arm64.107.1.4.nupkg.sha512",
-        "chromiumembeddedframework.runtime.win-arm64.nuspec",
-        "images/cef128x128.png",
-        "runtimes/win-arm64/native/chrome_100_percent.pak",
-        "runtimes/win-arm64/native/chrome_200_percent.pak",
-        "runtimes/win-arm64/native/chrome_elf.dll",
-        "runtimes/win-arm64/native/icudtl.dat",
-        "runtimes/win-arm64/native/libEGL.dll",
-        "runtimes/win-arm64/native/libGLESv2.dll",
-        "runtimes/win-arm64/native/libcef.dll",
-        "runtimes/win-arm64/native/resources.pak",
-        "runtimes/win-arm64/native/snapshot_blob.bin",
-        "runtimes/win-arm64/native/v8_context_snapshot.bin",
-        "runtimes/win-arm64/native/vk_swiftshader.dll",
-        "runtimes/win-arm64/native/vk_swiftshader_icd.json",
-        "runtimes/win-arm64/native/vulkan-1.dll"
-      ]
-    },
-    "chromiumembeddedframework.runtime.win-x64/107.1.4": {
-      "sha512": "Tv6lsRxOx71RVBxBdT0W/yBubMswMCW5lNoJRXDlrJ1F4U7wOHw9MJw2A83NR3QCViyu9OYHgThCc14YG5Ed8g==",
-      "type": "package",
-      "path": "chromiumembeddedframework.runtime.win-x64/107.1.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "README.txt",
-        "chromiumembeddedframework.runtime.win-x64.107.1.4.nupkg.sha512",
-        "chromiumembeddedframework.runtime.win-x64.nuspec",
-        "images/cef128x128.png",
-        "runtimes/win-x64/native/chrome_100_percent.pak",
-        "runtimes/win-x64/native/chrome_200_percent.pak",
-        "runtimes/win-x64/native/chrome_elf.dll",
-        "runtimes/win-x64/native/d3dcompiler_47.dll",
-        "runtimes/win-x64/native/icudtl.dat",
-        "runtimes/win-x64/native/libEGL.dll",
-        "runtimes/win-x64/native/libGLESv2.dll",
-        "runtimes/win-x64/native/libcef.dll",
-        "runtimes/win-x64/native/resources.pak",
-        "runtimes/win-x64/native/snapshot_blob.bin",
-        "runtimes/win-x64/native/v8_context_snapshot.bin",
-        "runtimes/win-x64/native/vk_swiftshader.dll",
-        "runtimes/win-x64/native/vk_swiftshader_icd.json",
-        "runtimes/win-x64/native/vulkan-1.dll"
-      ]
-    },
-    "chromiumembeddedframework.runtime.win-x86/107.1.4": {
-      "sha512": "j72usTY94A3a6c21X3gUWdpyijHX6PvfM2hzu27hy5DXY2aAyQw2Qd+vngSXOJfNcUv0rRPu95NywBWffrTAWQ==",
-      "type": "package",
-      "path": "chromiumembeddedframework.runtime.win-x86/107.1.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "README.txt",
-        "chromiumembeddedframework.runtime.win-x86.107.1.4.nupkg.sha512",
-        "chromiumembeddedframework.runtime.win-x86.nuspec",
-        "images/cef128x128.png",
-        "runtimes/win-x86/native/chrome_100_percent.pak",
-        "runtimes/win-x86/native/chrome_200_percent.pak",
-        "runtimes/win-x86/native/chrome_elf.dll",
-        "runtimes/win-x86/native/d3dcompiler_47.dll",
-        "runtimes/win-x86/native/icudtl.dat",
-        "runtimes/win-x86/native/libEGL.dll",
-        "runtimes/win-x86/native/libGLESv2.dll",
-        "runtimes/win-x86/native/libcef.dll",
-        "runtimes/win-x86/native/resources.pak",
-        "runtimes/win-x86/native/snapshot_blob.bin",
-        "runtimes/win-x86/native/v8_context_snapshot.bin",
-        "runtimes/win-x86/native/vk_swiftshader.dll",
-        "runtimes/win-x86/native/vk_swiftshader_icd.json",
-        "runtimes/win-x86/native/vulkan-1.dll"
-      ]
-    },
     "ControlzEx/4.4.0": {
       "sha512": "pZ5z4hYWwE4R13UMCVs6vII//nL7hz+Nwn4oJlnsZJRGqJNy6Z9KnJiTZfly6lKFu0pMc1aWBZpx+VqFTQKP1Q==",
       "type": "package",
@@ -1103,101 +578,6 @@
         "tools/Install.ps1"
       ]
     },
-    "runtime.linux-arm.runtime.native.System.IO.Ports/6.0.0": {
-      "sha512": "75q52H7CSpgIoIDwXb9o833EvBZIXJ0mdPhz1E6jSisEXUBlSCPalC29cj3EXsjpuDwr0dj1LRXZepIQH/oL4Q==",
-      "type": "package",
-      "path": "runtime.linux-arm.runtime.native.system.io.ports/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "runtime.linux-arm.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
-        "runtime.linux-arm.runtime.native.system.io.ports.nuspec",
-        "runtimes/linux-arm/native/libSystem.IO.Ports.Native.so",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "runtime.linux-arm64.runtime.native.System.IO.Ports/6.0.0": {
-      "sha512": "xn2bMThmXr3CsvOYmS8ex2Yz1xo+kcnhVg2iVhS9PlmqjZPAkrEo/I40wjrBZH/tU4kvH0s1AE8opAvQ3KIS8g==",
-      "type": "package",
-      "path": "runtime.linux-arm64.runtime.native.system.io.ports/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "runtime.linux-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
-        "runtime.linux-arm64.runtime.native.system.io.ports.nuspec",
-        "runtimes/linux-arm64/native/libSystem.IO.Ports.Native.so",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "runtime.linux-x64.runtime.native.System.IO.Ports/6.0.0": {
-      "sha512": "16nbNXwv0sC+gLGIuecri0skjuh6R1maIJggsaNP7MQBcbVcEfWFUOkEnsnvoLEjy0XerfibuRptfQ8AmdIcWA==",
-      "type": "package",
-      "path": "runtime.linux-x64.runtime.native.system.io.ports/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "runtime.linux-x64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
-        "runtime.linux-x64.runtime.native.system.io.ports.nuspec",
-        "runtimes/linux-x64/native/libSystem.IO.Ports.Native.so",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "runtime.native.System.IO.Ports/6.0.0": {
-      "sha512": "KaaXlpOcuZjMdmyF5wzzx3b+PRKIzt6A5Ax9dKenPDQbVJAFpev+casD0BIig1pBcbs3zx7CqWemzUJKAeHdSQ==",
-      "type": "package",
-      "path": "runtime.native.system.io.ports/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "runtime.native.system.io.ports.6.0.0.nupkg.sha512",
-        "runtime.native.system.io.ports.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "runtime.osx-arm64.runtime.native.System.IO.Ports/6.0.0": {
-      "sha512": "fXG12NodG1QrCdoaeSQ1gVnk/koi4WYY4jZtarMkZeQMyReBm1nZlSRoPnUjLr2ZR36TiMjpcGnQfxymieUe7w==",
-      "type": "package",
-      "path": "runtime.osx-arm64.runtime.native.system.io.ports/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "runtime.osx-arm64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
-        "runtime.osx-arm64.runtime.native.system.io.ports.nuspec",
-        "runtimes/osx-arm64/native/libSystem.IO.Ports.Native.dylib",
-        "useSharedDesignerContext.txt"
-      ]
-    },
-    "runtime.osx-x64.runtime.native.System.IO.Ports/6.0.0": {
-      "sha512": "/As+zPY49+dSUXkh+fTUbyPhqrdGN//evLxo4Vue88pfh1BHZgF7q4kMblTkxYvwR6Vi03zSYxysSFktO8/SDQ==",
-      "type": "package",
-      "path": "runtime.osx-x64.runtime.native.system.io.ports/6.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "runtime.osx-x64.runtime.native.system.io.ports.6.0.0.nupkg.sha512",
-        "runtime.osx-x64.runtime.native.system.io.ports.nuspec",
-        "runtimes/osx-x64/native/libSystem.IO.Ports.Native.dylib",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "System.IO.Ports/6.0.0": {
       "sha512": "dRyGI7fUESar5ZLIpiBOaaNLW7YyOBGftjj5Of+xcduC/Rjl7RjhEnWDvvNBmHuF3d0tdXoqdVI/yrVA8f00XA==",
       "type": "package",
@@ -1230,70 +610,51 @@
         "system.io.ports.nuspec",
         "useSharedDesignerContext.txt"
       ]
-    },
-    "System.Text.Json/4.7.2": {
-      "sha512": "TcMd95wcrubm9nHvJEQs70rC0H/8omiSGGpU4FQ/ZA1URIqD4pjmFJh2Mfv1yH1eHgJDWTi2hMDXwTET+zOOyg==",
-      "type": "package",
-      "path": "system.text.json/4.7.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Text.Json.dll",
-        "lib/net461/System.Text.Json.xml",
-        "lib/netcoreapp3.0/System.Text.Json.dll",
-        "lib/netcoreapp3.0/System.Text.Json.xml",
-        "lib/netstandard2.0/System.Text.Json.dll",
-        "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.4.7.2.nupkg.sha512",
-        "system.text.json.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": [
-      "CefSharp.Wpf.NETCore >= 107.1.40",
+    ".NETFramework,Version=v4.7.2": [
       "MahApps.Metro >= 2.4.9",
       "MaterialDesignColors >= 2.0.9",
       "MaterialDesignExtensions >= 3.3.0",
       "MaterialDesignThemes >= 4.6.1",
       "MaterialDesignThemes.MahApps >= 0.2.5",
-      "System.IO.Ports >= 6.0.0",
-      "chromiumembeddedframework.runtime.win-arm64 >= 107.1.4",
-      "chromiumembeddedframework.runtime.win-x64 >= 107.1.4",
-      "chromiumembeddedframework.runtime.win-x86 >= 107.1.4"
+      "System.IO.Ports >= 6.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\caratovchanin\\.nuget\\packages\\": {}
+    "C:\\Users\\minec\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\caratovchanin\\source\\repos\\ASMaIoP\\ASMaIoP.Client\\ASMaIoP.Client.csproj",
+      "projectUniqueName": "E:\\Code\\!Famouse\\ASMaIoP\\ASMaIoP.Client\\ASMaIoP.Client.csproj",
       "projectName": "ASMaIoP.Client",
-      "projectPath": "C:\\Users\\caratovchanin\\source\\repos\\ASMaIoP\\ASMaIoP.Client\\ASMaIoP.Client.csproj",
-      "packagesPath": "C:\\Users\\caratovchanin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\caratovchanin\\source\\repos\\ASMaIoP\\ASMaIoP.Client\\obj\\",
+      "projectPath": "E:\\Code\\!Famouse\\ASMaIoP\\ASMaIoP.Client\\ASMaIoP.Client.csproj",
+      "packagesPath": "C:\\Users\\minec\\.nuget\\packages\\",
+      "outputPath": "E:\\Code\\!Famouse\\ASMaIoP\\ASMaIoP.Client\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\caratovchanin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\minec\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net472"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Users\\minec\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+        "net472": {
+          "targetAlias": "net472",
           "projectReferences": {}
         }
       },
@@ -1304,13 +665,9 @@
       }
     },
     "frameworks": {
-      "net6.0-windows7.0": {
-        "targetAlias": "net6.0-windows",
+      "net472": {
+        "targetAlias": "net472",
         "dependencies": {
-          "CefSharp.Wpf.NETCore": {
-            "target": "Package",
-            "version": "[107.1.40, )"
-          },
           "MahApps.Metro": {
             "target": "Package",
             "version": "[2.4.9, )"
@@ -1334,40 +691,14 @@
           "System.IO.Ports": {
             "target": "Package",
             "version": "[6.0.0, )"
-          },
-          "chromiumembeddedframework.runtime.win-arm64": {
-            "target": "Package",
-            "version": "[107.1.4, )"
-          },
-          "chromiumembeddedframework.runtime.win-x64": {
-            "target": "Package",
-            "version": "[107.1.4, )"
-          },
-          "chromiumembeddedframework.runtime.win-x86": {
-            "target": "Package",
-            "version": "[107.1.4, )"
-          }
-        },
-        "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48",
-          "net481"
-        ],
-        "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          },
-          "Microsoft.WindowsDesktop.App.WPF": {
-            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win7-x86": {
+        "#import": []
       }
     }
   }

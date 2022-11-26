@@ -13,7 +13,7 @@ namespace ASMaIoP.Models.Utilities
     {
         private static SerialPort CurrentArduionoPort = null;
         // Обьявляем делегата который будет вызываться при получении данных с сериал порта
-        public static CardReceivedHandler? cardReceivedHandler = null;
+        public static CardReceivedHandler cardReceivedHandler = null;
 
         public static bool UsePort(string sPortName)
         {

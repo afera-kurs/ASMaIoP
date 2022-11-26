@@ -11,10 +11,10 @@ namespace ASMaIoP.Models.Utilities
         Hashtable m_ConfigurationTable = new Hashtable();
 
         //Метод возвращает значение переменной из конфига
-        public string? GetValue(string sVarName)
+        public string GetValue(string sVarName)
         {
             // в [] указывается имя переменной и возвращаем занчение явно преобразуется в nullable string
-            return (string?)m_ConfigurationTable[sVarName];
+            return (string)m_ConfigurationTable[sVarName];
         }
 
         // Метод возвращает находиться ли в таблице переменная 
@@ -203,11 +203,11 @@ namespace ASMaIoP.Models.Utilities
         }
 
         //обьявляем индексатор чтобы переопрделить оператор []
-        public string? this[string val]
+        public string this[string val]
         {
             get
             {
-                return (string?)m_ConfigurationTable[val];
+                return (string)m_ConfigurationTable[val];
             }
         }
 

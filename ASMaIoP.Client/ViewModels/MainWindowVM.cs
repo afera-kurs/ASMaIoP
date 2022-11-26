@@ -66,7 +66,7 @@ namespace ASMaIoP.Client.ViewModels
 
         public void LogOut()
         {
-            AuthWindow.Instance.Show();
+            //AuthWindow.Instance.Show();
             Parent.Close();
         }
 
@@ -120,6 +120,6 @@ namespace ASMaIoP.Client.ViewModels
             }
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

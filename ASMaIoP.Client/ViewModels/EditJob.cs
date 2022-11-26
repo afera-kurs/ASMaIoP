@@ -299,6 +299,6 @@ namespace ASMaIoP.Client.ViewModels
             ApplicationAPIs.session.Close();
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\caratovchanin\source\repos\ASMaIoP\ASMaIoP.Client\obj\Release\net6.0-windows\
+E:\Code\!Famouse\ASMaIoP\ASMaIoP.Client\obj\Release\net6.0-windows\
 ASMaIoP.Client
 none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
-C:\Users\caratovchanin\source\repos\ASMaIoP\ASMaIoP.Client\App.xaml
+E:\Code\!Famouse\ASMaIoP\ASMaIoP.Client\App.xaml
 101897705522
-171-1944341450
+171-1399971664
 27-1385783690
-2061949797793
+206833552673
 View\AuthWindow.xaml;View\MainWindow.xaml;View\Pages\MyProf.xaml;View\Pages\MyProfileLeft.xaml;View\Pages\PageLeftCreater.xaml;View\Pages\PageRightCreateJob.xaml;View\Pages\PageRightCreateProf.xaml;View\Pages\TabelLeft.xaml;View\Pages\TabelRight.xaml;View\StylesASMaIoP.xaml;
 
 False

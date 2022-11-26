@@ -34,7 +34,7 @@ namespace ASMaIoP.Client
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        private static MainWindow? instance;
+        private static MainWindow instance;
         public static MainWindow Instance
         {
             get
@@ -51,7 +51,6 @@ namespace ASMaIoP.Client
         {
             ViewModel = new MainWindowVM(this);
             DataContext = ViewModel;
-            //PhotoUsers.Fill;
             InitializeComponent();
             ArduinoAPI.SetCardReceiver(null);
         }

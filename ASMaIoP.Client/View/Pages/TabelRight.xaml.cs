@@ -26,10 +26,10 @@ namespace ASMaIoP.Client.View.Pages
         {
             InitializeComponent();
             instance = this;
-            vm = new();
+            vm = new Tabel();
             DataContext = vm;
         }
-        private static TabelRight? instance;
+        private static TabelRight instance;
         public static TabelRight Instance
         {
             get => instance;

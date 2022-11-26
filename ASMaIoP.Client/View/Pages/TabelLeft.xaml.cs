@@ -27,7 +27,7 @@ namespace ASMaIoP.Client.View.Pages
             InitializeComponent();
             instance = this;
         }
-        private static TabelLeft? instance;
+        private static TabelLeft instance;
         public static TabelLeft Instance
         {
             get

@@ -93,7 +93,7 @@ namespace ASMaIoP.Models.Network
         public void Write(string sData)
         {
             // конвертируем строку в байты
-            byte[] data = Encoding.Default.GetBytes(sData);
+            byte[] data = Encoding.UTF8.GetBytes(sData);
             // получаем количество байт
             int nSize = data.Length;
             // отправляем размер строки клиенту
@@ -111,7 +111,7 @@ namespace ASMaIoP.Models.Network
             // Получаем саму строку у клиента
             m_Stream.Read(data, 0, nSize);
             // Получаем конвертируем байты в строку
-            return Encoding.Default.GetString(data);
+            return Encoding.UTF8.GetString(data);
         }
 
         public byte[] ReadBytes()

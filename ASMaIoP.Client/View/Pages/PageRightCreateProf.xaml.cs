@@ -27,7 +27,6 @@ namespace ASMaIoP.Client.View.Pages
         
         public PageRightCreateProf()
         {
-
             prof = new CreateProf(this);
             DataContext = prof;
 
