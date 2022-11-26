@@ -74,18 +74,17 @@ namespace ASMaIoP.Client.ViewModels
 
         private void UpdateMainWindow()
         {
-
             if (ASMaIoP.Models.ApplicationAPIs.session.AccessLevel >= 3)
-            {
-                MainWindow inst = MainWindow.Instance;
-                inst.Show();
-                inst.TopPanel.Visibility = Visibility.Visible;
-                Parent.Hide();
-            }
+                {
+                    MainWindow.Instance.Show();
+                    MainWindow.Instance.TopPanel.Visibility = Visibility.Visible;
+                    Parent.Close();
+                }
             else
-            {
-                MainWindow.Instance.Show();
-            }
+                {
+                    MainWindow.Instance.Show();
+                    Parent.Close();
+                }
         }   
 
     }
