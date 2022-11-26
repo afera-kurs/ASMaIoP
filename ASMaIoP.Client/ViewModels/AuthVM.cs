@@ -25,7 +25,7 @@ namespace ASMaIoP.Client.ViewModels
                 this.pass = value;
             }
         }
-
+        Устанавливаем parent дабы связаться с окном
         AuthWindow Parent;
 
         public AuthVM(AuthWindow Parent)
@@ -37,17 +37,20 @@ namespace ASMaIoP.Client.ViewModels
         public void CardTrigger(string CardId)
         {
             try
-            {
+            {   
+                //Парсим кард ID
                 CardId = CardId.Substring(0, CardId.Length - 1);
+                //Вызваем авторизации для карты
                 if (ASMaIoP.Models.ApplicationAPIs.session.Auth(CardId, String.Empty, String.Empty))
-                {
+                {   
                     Parent.Dispatcher.Invoke(() =>
                     {
+                        //Обновляем главное окно
                         UpdateMainWindow();
                     });
                 }
                 else
-                    MessageBox.Show("Еблан лечи голову");
+                    MessageBox.Show("лечи голову");
             }
             catch (Exception ex)
             {
@@ -58,7 +61,8 @@ namespace ASMaIoP.Client.ViewModels
         public void AuthCommand()
         {
             try
-            {
+            {   
+                //Вызваем авторизации для логина и пароля
                 if (ASMaIoP.Models.ApplicationAPIs.session.Auth(String.Empty, pass, Login))
                 {
                     UpdateMainWindow();
