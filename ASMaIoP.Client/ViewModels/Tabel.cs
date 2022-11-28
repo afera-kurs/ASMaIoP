@@ -118,6 +118,9 @@ namespace ASMaIoP.Client.ViewModels
             }
             catch(Exception ex)
             {
+                // закрываем соединение с сервером
+                ApplicationAPIs.session.Close();
+
                 //Выводим сообщение об ошибке
                 MessageBox.Show(ex.Message);
             }

@@ -116,6 +116,7 @@ namespace ASMaIoP.Client.ViewModels
             }
             catch (Exception ex)
             {
+                ApplicationAPIs.session.Close();
                 MessageBox.Show($"иди лечи голову:{ex.Message}");
             }
         }

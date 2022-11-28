@@ -45,6 +45,11 @@ namespace ASMaIoP.Client
             }
         }
 
+        public static MainWindow GetInstance
+        {
+            get => instance;
+        }
+
         public MainWindowVM ViewModel;
 
         public MainWindow()
@@ -74,6 +79,8 @@ namespace ASMaIoP.Client
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            CCLeft.Content = null;
+            CCRight.Content = null;
             CCLeft.Content = new PageLeftCreater(this);
         }
 
@@ -85,8 +92,21 @@ namespace ASMaIoP.Client
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            CCLeft.Content = null;
+            CCRight.Content = null;
             CCLeft.Content = new TabelLeft();
             CCRight.Content = new TabelRight();
+        }
+
+        private void ButtonProfile_Click(object sender, RoutedEventArgs e)
+        {
+            CCLeft.Content = null;
+            CCRight.Content = null;
+            
+            Profile.CreateNewInstance();
+
+            CCLeft.Content = new MyProfileLeft();
+            CCRight.Content = new MyProf();
         }
     }
 }

@@ -6,8 +6,9 @@
         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"         
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"                 
-        xmlns:local="clr-namespace:ASMaIoP.Client" xmlns:system="clr-namespace:System;assembly=System.Runtime"
-        mc:Ignorable="d"
+        xmlns:local="clr-namespace:ASMaIoP.Client" 
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+                 mc:Ignorable="d"
         ContentRendered="MetroWindow_ContentRendered"         
         Loaded="MetroWindow_Loaded"        
         Closing="OnWindowClosing"  
@@ -193,13 +194,14 @@
                             Width="150"    
                             Style="{DynamicResource SwitchMenuButton}"
                             HorizontalAlignment="Left"
-                            Margin="5">
-
+                            Margin="5"
+                            Click="ButtonProfile_Click">
                             <TextBlock x:Name="textBlock" Grid.Column="0" 
                                        FontSize="18" 
                                        Foreground="Black" 
                                        VerticalAlignment="Center"
-                                       Text="Профиль">
+                                       Text="Профиль"
+                                       >
                             </TextBlock>
                         </Button>
                         <Image Grid.Row="0"

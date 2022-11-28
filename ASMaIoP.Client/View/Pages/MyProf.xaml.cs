@@ -25,8 +25,14 @@ namespace ASMaIoP.Client.View.Pages
         public MyProf()
         {
             InitializeComponent();
-            profile = new Profile();
+            profile = Profile.Instance;
             DataContext = profile;
+            profile.LoadData();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            profile.LoadCalendar(CalendarProf);
         }
     }
 }

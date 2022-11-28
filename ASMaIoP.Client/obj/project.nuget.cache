@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "7zE39eq01YsC71fQcKZMRJTIpwWkHyrt+4I33n4sDqhETQVAhyJ3gg2Y05aQyQ3f5t75ftY5aXWe2XDTQ63B8Q==",
+  "dgSpecHash": "oGaobCAESnQnsyawIPM6wnN0apFnI3uRxKt5eBAVsc/rKQMUp1JbzmmpWtsgfDcebZQ+VTjVwEX6hDQbAQdD5Q==",
   "success": true,
-  "projectFilePath": "E:\\Code\\!Famouse\\ASMaIoP\\ASMaIoP.Client\\ASMaIoP.Client.csproj",
+  "projectFilePath": "C:\\Users\\caratovchanin\\source\\repos\\ASMaIoP\\ASMaIoP\\ASMaIoP.Client\\ASMaIoP.Client.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\minec\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
-    "C:\\Users\\minec\\.nuget\\packages\\mahapps.metro\\2.4.9\\mahapps.metro.2.4.9.nupkg.sha512",
-    "C:\\Users\\minec\\.nuget\\packages\\materialdesigncolors\\2.0.9\\materialdesigncolors.2.0.9.nupkg.sha512",
-    "C:\\Users\\minec\\.nuget\\packages\\materialdesignextensions\\3.3.0\\materialdesignextensions.3.3.0.nupkg.sha512",
-    "C:\\Users\\minec\\.nuget\\packages\\materialdesignthemes\\4.6.1\\materialdesignthemes.4.6.1.nupkg.sha512",
-    "C:\\Users\\minec\\.nuget\\packages\\materialdesignthemes.mahapps\\0.2.5\\materialdesignthemes.mahapps.0.2.5.nupkg.sha512",
-    "C:\\Users\\minec\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
-    "C:\\Users\\minec\\.nuget\\packages\\system.io.ports\\6.0.0\\system.io.ports.6.0.0.nupkg.sha512"
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\mahapps.metro\\2.4.9\\mahapps.metro.2.4.9.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\materialdesigncolors\\2.0.9\\materialdesigncolors.2.0.9.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\materialdesignextensions\\3.3.0\\materialdesignextensions.3.3.0.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\materialdesignthemes\\4.6.1\\materialdesignthemes.4.6.1.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\materialdesignthemes.mahapps\\0.2.5\\materialdesignthemes.mahapps.0.2.5.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
+    "C:\\Users\\caratovchanin\\.nuget\\packages\\system.io.ports\\6.0.0\\system.io.ports.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

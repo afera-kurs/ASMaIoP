@@ -88,42 +88,52 @@ namespace ASMaIoP.Client.ViewModels
 
         public void LoadUsers()
         {
-            Packet packet = new Packet();
-            //устанавливаем тип пакета
-            packet.SetPacketType(PacketType.CREATE_PROF_USERS);
-            //добавляем в пакет айди текущей сессии
-            packet.AddInt(ApplicationAPIs.session.SessionId);
-
-            //открываем соединение с сервером
-            if (!ApplicationAPIs.session.Open())
+            try
             {
-                MessageBox.Show("лечи голову");
+                Packet packet = new Packet();
+                //устанавливаем тип пакета
+                packet.SetPacketType(PacketType.CREATE_PROF_USERS);
+                //добавляем в пакет айди текущей сессии
+                packet.AddInt(ApplicationAPIs.session.SessionId);
+
+                //открываем соединение с сервером
+                if (!ApplicationAPIs.session.Open())
+                {
+                    MessageBox.Show("лечи голову");
+                }
+
+                //Отпрвляем хедер покета
+                ApplicationAPIs.session.Write(packet.GetBytes());
+
+                // получаем количество работников
+                int nCountEmployee = ApplicationAPIs.session.ReadInt();
+
+                // заходим в цикл чтобы получить всех работников
+                for (int i = 0; i < nCountEmployee; i++)
+                {
+                    //Получаем id рабочего
+                    int EmployeeId = ApplicationAPIs.session.ReadInt();
+                    //получаем имя работника
+                    string Name = ApplicationAPIs.session.ReadString();
+                    // получем фамилию работника
+                    string Surname = ApplicationAPIs.session.ReadString();
+                    // получаем его должность
+                    int JobId = ApplicationAPIs.session.ReadInt();
+                    // добовляем его в лист
+
+                    employees.Add(new EmployeeInfo { EmployeeId = EmployeeId, Name = Name, Surname = Surname, jodId = JobId });
+                }
+
+                // закрываем соединение с сервером
+                ApplicationAPIs.session.Close();
             }
-
-            //Отпрвляем хедер покета
-            ApplicationAPIs.session.Write(packet.GetBytes());
-
-            // получаем количество работников
-            int nCountEmployee = ApplicationAPIs.session.ReadInt();
-
-            // заходим в цикл чтобы получить всех работников
-            for (int i = 0; i < nCountEmployee; i++)
+            catch(Exception ex)
             {
-                //Получаем id рабочего
-                int EmployeeId = ApplicationAPIs.session.ReadInt();
-                //получаем имя работника
-                string Name = ApplicationAPIs.session.ReadString();
-                // получем фамилию работника
-                string Surname = ApplicationAPIs.session.ReadString();
-                // получаем его должность
-                int JobId = ApplicationAPIs.session.ReadInt();
-                // добовляем его в лист
+                // закрываем соединение с сервером
+                ApplicationAPIs.session.Close();
 
-                employees.Add(new EmployeeInfo { EmployeeId = EmployeeId, Name = Name, Surname = Surname, jodId = JobId });
+                MessageBox.Show(ex.Message);
             }
-
-            // закрываем соединение с сервером
-            ApplicationAPIs.session.Close();
         }
         
         public void FormLoaded()
@@ -142,46 +152,56 @@ namespace ASMaIoP.Client.ViewModels
         //Надо!
         public void LoadJobs()
         {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("JobTitle");
-            dt.Columns.Add("Id");
-            Packet packet = new Packet();
-            packet.SetPacketType(PacketType.ADMIN_ROLES_GET);
-
-            //добавляем в пакет айди текущей сессии
-            packet.AddInt(ApplicationAPIs.session.SessionId);
-
-            //открываем соединение с сервером
-            if (!ApplicationAPIs.session.Open())
+            try
             {
-                MessageBox.Show("лечи голову");
+                DataTable dt = new DataTable();
+                dt.Columns.Add("JobTitle");
+                dt.Columns.Add("Id");
+                Packet packet = new Packet();
+                packet.SetPacketType(PacketType.ADMIN_ROLES_GET);
+
+                //добавляем в пакет айди текущей сессии
+                packet.AddInt(ApplicationAPIs.session.SessionId);
+
+                //открываем соединение с сервером
+                if (!ApplicationAPIs.session.Open())
+                {
+                    MessageBox.Show("лечи голову");
+                }
+
+                //Отпрвляем хедер покета
+                ApplicationAPIs.session.Write(packet.GetBytes());
+
+                int nCount = ApplicationAPIs.session.ReadInt();
+
+                for(int i = 0; i < nCount; i++)
+                {
+                    int nRoleID = ApplicationAPIs.session.ReadInt();
+                    int nRoleSalary = ApplicationAPIs.session.ReadInt();
+                    int nRoleLvl = ApplicationAPIs.session.ReadInt();
+                    string RoleTitle = ApplicationAPIs.session.ReadString();
+
+                    JobsInfo.Add(new JobInfo { JobId = nRoleID, JobLevel = nRoleLvl, Title = RoleTitle,Salary = nRoleSalary  });
+
+                    DataRow dr = dt.NewRow(); 
+                    dr["JobTitle"] = RoleTitle;
+                    dr["Id"] = nRoleID;
+
+                    dt.Rows.Add(dr);
+                }
+
+                ApplicationAPIs.session.Close();
+
+                parent.ProfTumbler.DataContext = dt;
+                parent.ProfTumbler.DisplayMemberPath = dt.Columns[0].ToString();
             }
-
-            //Отпрвляем хедер покета
-            ApplicationAPIs.session.Write(packet.GetBytes());
-
-            int nCount = ApplicationAPIs.session.ReadInt();
-
-            for(int i = 0; i < nCount; i++)
+            catch (Exception ex)
             {
-                int nRoleID = ApplicationAPIs.session.ReadInt();
-                int nRoleSalary = ApplicationAPIs.session.ReadInt();
-                int nRoleLvl = ApplicationAPIs.session.ReadInt();
-                string RoleTitle = ApplicationAPIs.session.ReadString();
+                // закрываем соединение с сервером
+                ApplicationAPIs.session.Close();
 
-                JobsInfo.Add(new JobInfo { JobId = nRoleID, JobLevel = nRoleLvl, Title = RoleTitle,Salary = nRoleSalary  });
-
-                DataRow dr = dt.NewRow(); 
-                dr["JobTitle"] = RoleTitle;
-                dr["Id"] = nRoleID;
-
-                dt.Rows.Add(dr);
+                MessageBox.Show(ex.Message);
             }
-
-            ApplicationAPIs.session.Close();
-
-            parent.ProfTumbler.DataContext = dt;
-            parent.ProfTumbler.DisplayMemberPath = dt.Columns[0].ToString();
         }
 
         public void LoadJob(int JobID)
@@ -199,104 +219,135 @@ namespace ASMaIoP.Client.ViewModels
 
         public void edJob(int JobID, string JobTitle, int nSalary, int nRoleLvl)
         {
-            Packet packet = new Packet();
-            JobTitle = JobTitle.Replace("\f", String.Empty);
-            JobTitle = JobTitle.Replace("\0", String.Empty);
-            packet.SetPacketType(PacketType.ADMIN_ROLES_EDIT);
-
-            //добавляем в пакет айди текущей сессии
-            packet.AddInt(ApplicationAPIs.session.SessionId);
-
-            //открываем соединение с сервером
-            if (!ApplicationAPIs.session.Open())
+            try
             {
-                MessageBox.Show("лечи голову");
-                return;
+                Packet packet = new Packet();
+                JobTitle = JobTitle.Replace("\f", String.Empty);
+                JobTitle = JobTitle.Replace("\0", String.Empty);
+                packet.SetPacketType(PacketType.ADMIN_ROLES_EDIT);
+
+                //добавляем в пакет айди текущей сессии
+                packet.AddInt(ApplicationAPIs.session.SessionId);
+
+                //открываем соединение с сервером
+                if (!ApplicationAPIs.session.Open())
+                {
+                    MessageBox.Show("лечи голову");
+                    return;
+                }
+
+                packet.AddInt(JobID);
+                packet.AddInt(nRoleLvl);
+                packet.AddInt(nSalary);
+                packet.AddString(JobTitle);
+
+                ApplicationAPIs.session.Write(packet.GetBytes());
+
+                int bIsSuccesss = ApplicationAPIs.session.ReadInt();
+
+                // проверяем успешно ли пользователь отредактирован
+                if (bIsSuccesss == 1)
+                {
+                    MessageBox.Show("Пользователь успешно изменён!");
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка не удолось изменить данные пользователя!");
+                }
+
+                //закрываем соединение
+                ApplicationAPIs.session.Close();
             }
-
-            packet.AddInt(JobID);
-            packet.AddInt(nRoleLvl);
-            packet.AddInt(nSalary);
-            packet.AddString(JobTitle);
-
-            ApplicationAPIs.session.Write(packet.GetBytes());
-
-            int bIsSuccesss = ApplicationAPIs.session.ReadInt();
-
-            // проверяем успешно ли пользователь отредактирован
-            if (bIsSuccesss == 1)
+            catch(Exception ex)
             {
-                MessageBox.Show("Пользователь успешно изменён!");
-            }
-            else
-            {
-                MessageBox.Show("Ошибка не удолось изменить данные пользователя!");
-            }
+                //закрываем соединение
+                ApplicationAPIs.session.Close();
 
-            //закрываем соединение
-            ApplicationAPIs.session.Close();
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void DeleteJobs(int JobID)
         {
-            Packet packet = new Packet();
-            packet.SetPacketType(PacketType.ADMIN_ROLE_REMOVE);
-
-            //добавляем в пакет айди текущей сессии
-            packet.AddInt(ApplicationAPIs.session.SessionId);
-
-            //открываем соединение с сервером
-            if (!ApplicationAPIs.session.Open())
+            try
             {
-                MessageBox.Show("лечи голову");
+                Packet packet = new Packet();
+                packet.SetPacketType(PacketType.ADMIN_ROLE_REMOVE);
+
+                //добавляем в пакет айди текущей сессии
+                packet.AddInt(ApplicationAPIs.session.SessionId);
+
+                //открываем соединение с сервером
+                if (!ApplicationAPIs.session.Open())
+                {
+                    MessageBox.Show("лечи голову");
+                }
+
+                packet.AddInt(JobID);
+
+                ApplicationAPIs.session.Write(packet.GetBytes());
+
+                int bIsSuccesss = ApplicationAPIs.session.ReadInt();
+
+                // проверяем успешно ли пользователь отредактирован
+                if (bIsSuccesss == 1)
+                {
+                    MessageBox.Show("Должность успешно удалена!");
+                }
+                else
+                {
+                    LoadUsers();
+                    MessageBox.Show("Ошибка не удолось удалить данные пользователя!");
+                }
             }
-
-            packet.AddInt(JobID);
-
-            ApplicationAPIs.session.Write(packet.GetBytes());
-
-            int bIsSuccesss = ApplicationAPIs.session.ReadInt();
-
-            // проверяем успешно ли пользователь отредактирован
-            if (bIsSuccesss == 1)
+            catch(Exception ex)
             {
-                MessageBox.Show("Должность успешно удалена!");
-            }
-            else
-            {
-                LoadUsers();
-                MessageBox.Show("Ошибка не удолось удалить данные пользователя!");
+                //закрываем соединение
+                ApplicationAPIs.session.Close();
+
+                MessageBox.Show(ex.Message);
             }
         }
 
         public void CreateJobs(int nJobLevel, string JobTitle, int nSalary)
         {
-            Packet packet = new Packet();
-            packet.SetPacketType(PacketType.ADMIN_ROLE_CREATE);
-            //добавляем в пакет айди текущей сессии
-            packet.AddInt(ApplicationAPIs.session.SessionId);
-
-            packet.AddInt(nJobLevel);
-            packet.AddInt(nSalary);
-            packet.AddString(JobTitle);
-
-            //открываем соединение с сервером
-            if (!ApplicationAPIs.session.Open())
+            try
             {
-                MessageBox.Show("лечи голову");
+                Packet packet = new Packet();
+                packet.SetPacketType(PacketType.ADMIN_ROLE_CREATE);
+                //добавляем в пакет айди текущей сессии
+                packet.AddInt(ApplicationAPIs.session.SessionId);
+
+                packet.AddInt(nJobLevel);
+                packet.AddInt(nSalary);
+                packet.AddString(JobTitle);
+
+                //открываем соединение с сервером
+                if (!ApplicationAPIs.session.Open())
+                {
+                    MessageBox.Show("лечи голову");
+                    return;
+                }
+
+                //Отпрвляем хедер покета
+                ApplicationAPIs.session.Write(packet.GetBytes());
+
+                int nStatus = ApplicationAPIs.session.ReadInt();
+                if(nStatus != 1)
+                {
+                    MessageBox.Show("лечите голову шизофреники");
+                }
+
+                // закрываем соединение с сервером
+                ApplicationAPIs.session.Close();
             }
-
-            //Отпрвляем хедер покета
-            ApplicationAPIs.session.Write(packet.GetBytes());
-
-            int nStatus = ApplicationAPIs.session.ReadInt();
-            if(nStatus != 1)
+            catch (Exception ex)
             {
-                MessageBox.Show("лечите голову шизофреники");
-            }
+                //закрываем соединение
+                ApplicationAPIs.session.Close();
 
-            // закрываем соединение с сервером
-            ApplicationAPIs.session.Close();
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

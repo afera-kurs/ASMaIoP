@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ASMaIoP.Models;
+using ASMaIoP.Client.ViewModels;
 
 namespace ASMaIoP.Client.View.Pages
 {
@@ -20,9 +22,13 @@ namespace ASMaIoP.Client.View.Pages
     /// </summary>
     public partial class MyProfileLeft : UserControl
     {
+        Profile vm;
+
         public MyProfileLeft()
         {
             InitializeComponent();
+            vm = Profile.Instance;
+            DataContext = vm;
         }
     }
 }

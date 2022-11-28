@@ -7,6 +7,42 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Ellipse x:Name="PhotoUsers"
+                 Width="150"
+                 Height="150"
+                 VerticalAlignment="Top"
+                 HorizontalAlignment="Left"
+                 Margin="5 5 0 0">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="{Binding ProfileImage}"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <TextBlock x:Name="Name"
+                   Grid.Row="1"
+                   FontSize="18"
+                   Text="{Binding Name}"
+                   Margin="5 10 0 10"></TextBlock>
+        <TextBlock x:Name="Surname"
+                   Grid.Row="2"
+                   FontSize="18"
+                   Text="{Binding Surname}"
+                   Margin="5 10 0 10"></TextBlock>
+        <TextBlock x:Name="Role"
+                   Grid.Row="3"
+                   FontSize="18"
+                   Text="{Binding Role}"
+                   Margin="5 10 0 10"></TextBlock>
+        <TextBlock x:Name="Salry"
+                   Grid.Row="4"
+                   FontSize="18"
+                   Text="{Binding Salary}"
+                   Margin="5 10 0 10"></TextBlock>
     </Grid>
 </UserControl>
